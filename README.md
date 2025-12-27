@@ -13,6 +13,7 @@ The actual SpokeToWork app will be built by forking the [ScriptHammer.com](https
 
 ## Quick Links
 
+- [Wireframes](https://tortoisewolfe.github.io/SpokeToWork-MVP/design/wireframes/) - Interactive UI designs
 - [Constitution](docs/full-constitution-prp.md) - Product vision, scope, success criteria
 - [Business Development](https://github.com/TortoiseWolfe/SpokeToWork---Business-Development) - Pitch materials, funding strategy
 
