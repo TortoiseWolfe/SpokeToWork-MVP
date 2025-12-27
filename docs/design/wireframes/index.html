@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpokeToWork Wireframes</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #1f2937;
+      color: #e5e7eb;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Sidebar */
+    nav {
+      width: 280px;
+      background: #111827;
+      border-right: 1px solid #374151;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    nav h1 {
+      padding: 20px;
+      font-size: 18px;
+      color: #6366f1;
+      border-bottom: 1px solid #374151;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav h1::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background: #6366f1;
+      border-radius: 50%;
+    }
+
+    .nav-section {
+      padding: 16px 0 8px 0;
+    }
+
+    .nav-section h2 {
+      font-size: 11px;
+      font-weight: 600;
+      color: #9ca3af;
+      padding: 0 20px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-section a {
+      display: block;
+      padding: 10px 20px;
+      color: #d1d5db;
+      text-decoration: none;
+      font-size: 14px;
+      border-left: 3px solid transparent;
+      transition: all 0.15s;
+    }
+
+    .nav-section a:hover {
+      background: #1f2937;
+      color: #fff;
+    }
+
+    .nav-section a.active {
+      background: #1f2937;
+      color: #6366f1;
+      border-left-color: #6366f1;
+    }
+
+    .nav-section a .path {
+      display: block;
+      font-size: 10px;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    /* Main content area */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    #viewer-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow: auto;
+      background: #374151;
+    }
+
+    #viewer {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transform-origin: center center;
+      transition: transform 0.15s ease;
+    }
+
+    /* Bottom navigation */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: #111827;
+      border-top: 1px solid #374151;
+    }
+
+    footer button {
+      padding: 10px 20px;
+      background: #374151;
+      color: #e5e7eb;
+      border: 1px solid #4b5563;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.15s;
+      min-width: 120px;
+    }
+
+    footer button:hover:not(:disabled) {
+      background: #4b5563;
+      color: #fff;
+    }
+
+    footer button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    #current-info {
+      text-align: center;
+    }
+
+    #current-info .title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    #current-info .counter {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+
+    /* Error state */
+    .error {
+      color: #f87171;
+      padding: 40px;
+      text-align: center;
+    }
+
+    /* Zoom controls */
+    .zoom-controls {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: 16px;
+    }
+
+    .zoom-controls button {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      padding: 0;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .zoom-display {
+      min-width: 50px;
+      text-align: center;
+      font-size: 12px;
+      color: #9ca3af;
+      cursor: pointer;
+    }
+
+    .zoom-display:hover {
+      color: #6366f1;
+    }
+
+    /* Pan/drag cursor */
+    #viewer-container {
+      cursor: grab;
+    }
+
+    #viewer-container.dragging {
+      cursor: grabbing;
+      user-select: none;
+    }
+
+    #viewer-container.dragging #viewer {
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>SpokeToWork</h1>
+
+    <div class="nav-section">
+      <h2>00 - App Shell</h2>
+      <a href="#" data-svg="00-app-shell/desktop-layout.svg">
+        Desktop Layout
+        <span class="path">3-column layout</span>
+      </a>
+      <a href="#" data-svg="00-app-shell/mobile-layout.svg">
+        Mobile Layout
+        <span class="path">Bottom navigation</span>
+      </a>
+    </div>
+
+    <div class="nav-section">
+      <h2>01 - Company Tracking</h2>
+      <a href="#" data-svg="01-company-tracking/list-view.svg">
+        List View
+        <span class="path">Table + map panel</span>
+      </a>
+      <a href="#" data-svg="01-company-tracking/add-company.svg">
+        Add Company
+        <span class="path">Modal form</span>
+      </a>
+      <a href="#" data-svg="01-company-tracking/detail-panel.svg">
+        Detail Panel
+        <span class="path">Slide panel</span>
+      </a>
+    </div>
+
+    <div class="nav-section">
+      <h2>02 - Home Location</h2>
+      <a href="#" data-svg="02-home-location/onboarding-prompt.svg">
+        Onboarding Prompt
+        <span class="path">First-time setup</span>
+      </a>
+      <a href="#" data-svg="02-home-location/settings-update.svg">
+        Settings Update
+        <span class="path">Address management</span>
+      </a>
+    </div>
+
+    <div class="nav-section">
+      <h2>03 - Shared Registry</h2>
+      <a href="#" data-svg="03-shared-registry/browse-filter.svg">
+        Browse & Filter
+        <span class="path">Community directory</span>
+      </a>
+      <a href="#" data-svg="03-shared-registry/contribute-flow.svg">
+        Contribute Flow
+        <span class="path">Share with community</span>
+      </a>
+      <a href="#" data-svg="03-shared-registry/duplicate-warning.svg">
+        Duplicate Warning
+        <span class="path">Dedup detection</span>
+      </a>
+    </div>
+
+    <div class="nav-section">
+      <h2>04 - Route Planning</h2>
+      <a href="#" data-svg="04-route-planning/route-list.svg">
+        Route List
+        <span class="path">Saved routes</span>
+      </a>
+      <a href="#" data-svg="04-route-planning/create-route.svg">
+        Create Route
+        <span class="path">Route builder</span>
+      </a>
+      <a href="#" data-svg="04-route-planning/directions-view.svg">
+        Directions View
+        <span class="path">Turn-by-turn</span>
+      </a>
+    </div>
+
+    <div class="nav-section">
+      <h2>05 - Employer Features</h2>
+      <a href="#" data-svg="05-employer-features/dashboard.svg">
+        Dashboard
+        <span class="path">Stats + jobs</span>
+      </a>
+      <a href="#" data-svg="05-employer-features/claim-company.svg">
+        Claim Company
+        <span class="path">Verification flow</span>
+      </a>
+      <a href="#" data-svg="05-employer-features/post-job.svg">
+        Post Job
+        <span class="path">Job form + preview</span>
+      </a>
+    </div>
+
+    <div class="nav-section">
+      <h2>06 - Components</h2>
+      <a href="#" data-svg="06-component-library.svg">
+        Component Library
+        <span class="path">All UI elements</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <div id="viewer-container">
+      <object id="viewer" type="image/svg+xml" data="00-app-shell/desktop-layout.svg">
+        <p class="error">Unable to load SVG</p>
+      </object>
+    </div>
+
+    <footer>
+      <div style="display: flex; align-items: center;">
+        <button id="prev" aria-label="Previous wireframe">
+          &larr; Previous
+        </button>
+        <div class="zoom-controls">
+          <button id="zoom-out" aria-label="Zoom out">&minus;</button>
+          <span id="zoom-display" class="zoom-display" title="Click to reset">100%</span>
+          <button id="zoom-in" aria-label="Zoom in">+</button>
+        </div>
+      </div>
+      <div id="current-info">
+        <div class="title">Desktop Layout</div>
+        <div class="counter">1 / 17</div>
+      </div>
+      <button id="next" aria-label="Next wireframe">
+        Next &rarr;
+      </button>
+    </footer>
+  </main>
+
+  <script>
+    const wireframes = [
+      { path: '00-app-shell/desktop-layout.svg', title: 'Desktop Layout' },
+      { path: '00-app-shell/mobile-layout.svg', title: 'Mobile Layout' },
+      { path: '01-company-tracking/list-view.svg', title: 'List View' },
+      { path: '01-company-tracking/add-company.svg', title: 'Add Company' },
+      { path: '01-company-tracking/detail-panel.svg', title: 'Detail Panel' },
+      { path: '02-home-location/onboarding-prompt.svg', title: 'Onboarding Prompt' },
+      { path: '02-home-location/settings-update.svg', title: 'Settings Update' },
+      { path: '03-shared-registry/browse-filter.svg', title: 'Browse & Filter' },
+      { path: '03-shared-registry/contribute-flow.svg', title: 'Contribute Flow' },
+      { path: '03-shared-registry/duplicate-warning.svg', title: 'Duplicate Warning' },
+      { path: '04-route-planning/route-list.svg', title: 'Route List' },
+      { path: '04-route-planning/create-route.svg', title: 'Create Route' },
+      { path: '04-route-planning/directions-view.svg', title: 'Directions View' },
+      { path: '05-employer-features/dashboard.svg', title: 'Dashboard' },
+      { path: '05-employer-features/claim-company.svg', title: 'Claim Company' },
+      { path: '05-employer-features/post-job.svg', title: 'Post Job' },
+      { path: '06-component-library.svg', title: 'Component Library' }
+    ];
+
+    let currentIndex = 0;
+    let zoom = 1;
+    const ZOOM_STEP = 0.25;
+    const ZOOM_MIN = 0.25;
+    const ZOOM_MAX = 3;
+
+    const viewer = document.getElementById('viewer');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    const titleEl = document.querySelector('#current-info .title');
+    const counterEl = document.querySelector('#current-info .counter');
+    const navLinks = document.querySelectorAll('nav a[data-svg]');
+    const zoomInBtn = document.getElementById('zoom-in');
+    const zoomOutBtn = document.getElementById('zoom-out');
+    const zoomDisplay = document.getElementById('zoom-display');
+
+    function updateView(index) {
+      currentIndex = index;
+      const wf = wireframes[currentIndex];
+
+      // Reset zoom when changing wireframes
+      setZoom(1);
+
+      // Update viewer
+      viewer.data = wf.path;
+
+      // Update info
+      titleEl.textContent = wf.title;
+      counterEl.textContent = `${currentIndex + 1} / ${wireframes.length}`;
+
+      // Update buttons
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === wireframes.length - 1;
+
+      // Update active nav link
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.svg === wf.path);
+      });
+    }
+
+    // Nav link clicks
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const path = link.dataset.svg;
+        const index = wireframes.findIndex(w => w.path === path);
+        if (index !== -1) {
+          updateView(index);
+        }
+      });
+    });
+
+    // Prev/Next buttons
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        updateView(currentIndex - 1);
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < wireframes.length - 1) {
+        updateView(currentIndex + 1);
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft' && currentIndex > 0) {
+        updateView(currentIndex - 1);
+      } else if (e.key === 'ArrowRight' && currentIndex < wireframes.length - 1) {
+        updateView(currentIndex + 1);
+      } else if (e.key === '+' || e.key === '=') {
+        setZoom(zoom + ZOOM_STEP);
+      } else if (e.key === '-' || e.key === '_') {
+        setZoom(zoom - ZOOM_STEP);
+      } else if (e.key === '0') {
+        setZoom(1);
+      }
+    });
+
+    // Zoom functions
+    function setZoom(level) {
+      zoom = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, level));
+      viewer.style.transform = `scale(${zoom})`;
+      zoomDisplay.textContent = `${Math.round(zoom * 100)}%`;
+      zoomInBtn.disabled = zoom >= ZOOM_MAX;
+      zoomOutBtn.disabled = zoom <= ZOOM_MIN;
+    }
+
+    // Zoom button clicks
+    zoomInBtn.addEventListener('click', () => setZoom(zoom + ZOOM_STEP));
+    zoomOutBtn.addEventListener('click', () => setZoom(zoom - ZOOM_STEP));
+    zoomDisplay.addEventListener('click', () => setZoom(1));
+
+    // Mouse wheel zoom (Ctrl + scroll)
+    const viewerContainer = document.getElementById('viewer-container');
+    viewerContainer.addEventListener('wheel', (e) => {
+      if (e.ctrlKey) {
+        e.preventDefault();
+        const delta = e.deltaY > 0 ? -ZOOM_STEP : ZOOM_STEP;
+        setZoom(zoom + delta);
+      }
+    }, { passive: false });
+
+    // Pan/drag functionality
+    let isDragging = false;
+    let startX, startY, scrollLeft, scrollTop;
+
+    viewerContainer.addEventListener('mousedown', (e) => {
+      // Only left mouse button
+      if (e.button !== 0) return;
+
+      isDragging = true;
+      viewerContainer.classList.add('dragging');
+      startX = e.pageX - viewerContainer.offsetLeft;
+      startY = e.pageY - viewerContainer.offsetTop;
+      scrollLeft = viewerContainer.scrollLeft;
+      scrollTop = viewerContainer.scrollTop;
+    });
+
+    viewerContainer.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+
+      const x = e.pageX - viewerContainer.offsetLeft;
+      const y = e.pageY - viewerContainer.offsetTop;
+      const walkX = (x - startX) * 1.5; // Multiplier for faster panning
+      const walkY = (y - startY) * 1.5;
+
+      viewerContainer.scrollLeft = scrollLeft - walkX;
+      viewerContainer.scrollTop = scrollTop - walkY;
+    });
+
+    viewerContainer.addEventListener('mouseup', () => {
+      isDragging = false;
+      viewerContainer.classList.remove('dragging');
+    });
+
+    viewerContainer.addEventListener('mouseleave', () => {
+      isDragging = false;
+      viewerContainer.classList.remove('dragging');
+    });
+
+    // Initialize
+    updateView(0);
+  </script>
+</body>
+</html>

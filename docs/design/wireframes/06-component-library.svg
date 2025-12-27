@@ -462,9 +462,9 @@
   </g>
 
   <!-- ============================================ -->
-  <!-- SECTION: STATES & INDICATORS -->
+  <!-- SECTION: STATES &amp; INDICATORS -->
   <!-- ============================================ -->
-  <text x="40" y="1480" class="section-title">STATES & INDICATORS</text>
+  <text x="40" y="1480" class="section-title">STATES &amp; INDICATORS</text>
   <line x1="40" y1="1490" x2="1160" y2="1490" class="divider"/>
 
   <g transform="translate(40, 1510)">
@@ -477,7 +477,7 @@
     <text x="140" y="0" class="label">EMPTY STATE</text>
     <rect x="140" y="15" width="200" height="80" rx="8" class="fill-light" stroke-dasharray="4,4"/>
     <text x="240" y="50" text-anchor="middle" class="text-md" fill="#6b7280">No companies yet</text>
-    <text x="240" y="70" text-anchor="middle" class="text-sm" fill="#9ca3af">Add your first company</text>
+    <text x="240" y="70" text-anchor="middle" class="text-sm" fill="#6b7280">Add your first company</text>
 
     <!-- Error State -->
     <text x="400" y="0" class="label">ERROR STATE</text>

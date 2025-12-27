@@ -75,20 +75,20 @@
   <rect x="52" y="172" width="196" height="80" rx="6" fill="white" stroke="#6366f1" stroke-width="2"/>
   <text x="64" y="194" class="heading">Downtown Loop</text>
   <text x="64" y="212" class="text-sm">4 stops - 12.3 mi</text>
-  <text x="64" y="230" class="text-sm" fill="#9ca3af">Active route</text>
+  <text x="64" y="230" class="text-sm" fill="#4b5563">Active route</text>
   <circle cx="220" cy="190" r="6" fill="#22c55e"/>
 
   <!-- Route Card 2 -->
   <rect x="52" y="264" width="196" height="70" rx="6" class="fill-white"/>
   <text x="64" y="286" class="text-md" font-weight="bold">Healthcare Run</text>
   <text x="64" y="304" class="text-sm">3 stops - 8.5 mi</text>
-  <text x="64" y="320" class="text-sm" fill="#9ca3af">Dec 24</text>
+  <text x="64" y="320" class="text-sm" fill="#4b5563">Dec 24</text>
 
   <!-- Route Card 3 -->
   <rect x="52" y="346" width="196" height="70" rx="6" class="fill-white"/>
   <text x="64" y="368" class="text-md" font-weight="bold">Manufacturing Tour</text>
   <text x="64" y="386" class="text-sm">5 stops - 15.2 mi</text>
-  <text x="64" y="402" class="text-sm" fill="#9ca3af">Dec 20</text>
+  <text x="64" y="402" class="text-sm" fill="#4b5563">Dec 20</text>
 
   <!-- Sidebar dimension -->
   <line x1="30" y1="116" x2="30" y2="760" class="dimension" marker-start="url(#arrow-left)" marker-end="url(#arrow)"/>

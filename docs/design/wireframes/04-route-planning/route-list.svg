@@ -74,22 +74,22 @@
   <rect x="55" y="330" width="250" height="90" rx="8" class="fill-white"/>
   <text x="75" y="360" class="heading">Healthcare Run</text>
   <text x="75" y="380" class="text-sm" fill="#6b7280">3 stops - 8.5 miles - ~45 min</text>
-  <text x="75" y="400" class="text-sm" fill="#9ca3af">Last used: Dec 24</text>
+  <text x="75" y="400" class="text-sm" fill="#6b7280">Last used: Dec 24</text>
 
   <!-- Route Card 3 -->
   <rect x="55" y="435" width="250" height="90" rx="8" class="fill-white"/>
   <text x="75" y="465" class="heading">Manufacturing Tour</text>
   <text x="75" y="485" class="text-sm" fill="#6b7280">5 stops - 15.2 miles - ~78 min</text>
-  <text x="75" y="505" class="text-sm" fill="#9ca3af">Last used: Dec 20</text>
+  <text x="75" y="505" class="text-sm" fill="#6b7280">Last used: Dec 20</text>
 
   <!-- Route Card 4 -->
   <rect x="55" y="540" width="250" height="90" rx="8" class="fill-white"/>
   <text x="75" y="570" class="heading">Quick Stops</text>
   <text x="75" y="590" class="text-sm" fill="#6b7280">2 stops - 4.1 miles - ~22 min</text>
-  <text x="75" y="610" class="text-sm" fill="#9ca3af">Last used: Dec 18</text>
+  <text x="75" y="610" class="text-sm" fill="#6b7280">Last used: Dec 18</text>
 
   <!-- Empty state hint -->
-  <text x="180" y="680" text-anchor="middle" class="text-sm" fill="#9ca3af">4 routes saved</text>
+  <text x="180" y="680" text-anchor="middle" class="text-sm" fill="#6b7280">4 routes saved</text>
 
   <!-- ============================================ -->
   <!-- MAP WITH ROUTE PREVIEW -->
