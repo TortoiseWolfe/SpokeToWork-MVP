@@ -150,8 +150,8 @@
     <line x1="10" y1="45" x2="290" y2="45" stroke="#e5e7eb"/>
     <line x1="10" y1="60" x2="290" y2="60" stroke="#e5e7eb"/>
     <line x1="10" y1="75" x2="200" y2="75" stroke="#e5e7eb"/>
-    <text x="320" y="50" class="annotation">Multi-line input</text>
   </g>
+  <text x="360" y="590" class="annotation">Multi-line input</text>
 
   <!-- ============================================ -->
   <!-- SECTION: STATUS BADGES -->
@@ -521,29 +521,31 @@
   <line x1="620" y1="1650" x2="1160" y2="1650" class="divider"/>
 
   <g transform="translate(620, 1670)">
+    <!-- Row 1 -->
     <rect x="0" y="0" width="30" height="30" rx="4" fill="#6366f1"/>
-    <text x="40" y="20" class="label">Indigo #6366f1</text>
-    <text x="150" y="20" class="annotation">Primary</text>
+    <text x="40" y="14" class="label">Indigo</text>
+    <text x="40" y="28" class="annotation">#6366f1 - Primary</text>
 
-    <rect x="210" y="0" width="30" height="30" rx="4" fill="#22c55e"/>
-    <text x="250" y="20" class="label">Green #22c55e</text>
-    <text x="360" y="20" class="annotation">Success/Home</text>
+    <rect x="200" y="0" width="30" height="30" rx="4" fill="#22c55e"/>
+    <text x="240" y="14" class="label">Green</text>
+    <text x="240" y="28" class="annotation">#22c55e - Success</text>
 
-    <rect x="0" y="40" width="30" height="30" rx="4" fill="#eab308"/>
-    <text x="40" y="60" class="label">Yellow #eab308</text>
-    <text x="150" y="60" class="annotation">Warning</text>
+    <rect x="400" y="0" width="30" height="30" rx="4" fill="#3b82f6"/>
+    <text x="440" y="14" class="label">Blue</text>
+    <text x="440" y="28" class="annotation">#3b82f6 - Routes</text>
 
-    <rect x="210" y="40" width="30" height="30" rx="4" fill="#ef4444"/>
-    <text x="250" y="60" class="label">Red #ef4444</text>
-    <text x="360" y="60" class="annotation">Danger</text>
+    <!-- Row 2 -->
+    <rect x="0" y="50" width="30" height="30" rx="4" fill="#eab308"/>
+    <text x="40" y="64" class="label">Yellow</text>
+    <text x="40" y="78" class="annotation">#eab308 - Warning</text>
 
-    <rect x="0" y="80" width="30" height="30" rx="4" fill="#3b82f6"/>
-    <text x="40" y="100" class="label">Blue #3b82f6</text>
-    <text x="150" y="100" class="annotation">Routes/Info</text>
+    <rect x="200" y="50" width="30" height="30" rx="4" fill="#ef4444"/>
+    <text x="240" y="64" class="label">Red</text>
+    <text x="240" y="78" class="annotation">#ef4444 - Danger</text>
 
-    <rect x="210" y="80" width="30" height="30" rx="4" fill="#374151"/>
-    <text x="250" y="100" class="label">Gray #374151</text>
-    <text x="360" y="100" class="annotation">Text</text>
+    <rect x="400" y="50" width="30" height="30" rx="4" fill="#374151"/>
+    <text x="440" y="64" class="label">Gray</text>
+    <text x="440" y="78" class="annotation">#374151 - Text</text>
   </g>
 
   <!-- Footer -->
