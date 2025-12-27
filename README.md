@@ -1,145 +1,63 @@
-# SpecKit Project Template
+# SpokeToWork Planning
 
-Constitution  
-Specify  
-Clarify  
-Plan  
-Checklist  
-Task  
-Analyze  
-Implement  
+Planning repository for SpokeToWork - a bicycle-based job hunting app for Cleveland, Tennessee.
 
-This template provides a Docker-based setup for [GitHub SpecKit](https://github.com/github/spec-kit) - a spec-driven development toolkit that helps you create, plan, and implement features using AI-assisted workflows.
+## What This Repo Is
 
-## What This Template Provides
+This is a **planning repository**, not the actual codebase. It contains:
+- Product constitution and requirements
+- Feature specifications (via SpecKit)
+- Research materials (Cleveland employers, e-bike dealers)
 
-- **No local Python/UV required** - Everything runs in Docker containers
-- **Auto-installation** - SpecKit installs automatically on first use
-- **Claude Code integration** - Slash commands for spec-driven development
-- **Project templates** - Pre-configured structure for specifications, plans, and tasks
+The actual SpokeToWork app will be built by forking the [ScriptHammer.com](https://scripthammer.com) template.
 
-## Requirements
+## Quick Links
 
-- Docker
-- Docker Compose
+- [Constitution](docs/full-constitution-prp.md) - Product vision, scope, success criteria
+- [Business Development](https://github.com/TortoiseWolfe/SpokeToWork---Business-Development) - Pitch materials, funding strategy
 
-That's it! No Python, UV, or other dependencies needed on your local machine.
+## Timeline
 
-## Quick Start
+**Beta Launch: End of January 2026**
+- 5+ worker beta testers
+- 3+ employer beta testers
+- 50+ Cleveland employers in shared registry
+- Revenue generation started
 
-### 1. Create a New Project
+**Why Jan 2026?** Investors (TVFCU, CO.LAB) require 12 months of revenue + beta feedback.
 
-```bash
-# Copy the template to your new project location
-cp -r /home/turtle_wolfe/repos/speckit-template /path/to/your-new-project
-cd /path/to/your-new-project
+## SpecKit Commands
 
-# Run any specify command - this auto-installs everything on first run
-./specify --help
-```
+Use these to plan features:
 
-### 2. What Happens on First Run
+| Command | Purpose |
+|---------|---------|
+| `/speckit.specify` | Create feature specification |
+| `/speckit.clarify` | Clarify requirements |
+| `/speckit.plan` | Design implementation |
+| `/speckit.tasks` | Generate task list |
+| `/speckit.implement` | Build the feature |
 
-When you run `./specify` for the first time:
+## Related Repositories
 
-1. **Installs SpecKit** - Downloads and installs SpecKit CLI in `.speckit/` directory
-2. **Initializes Project** - Creates `.specify/` with templates and configuration
-3. **Sets up Claude Code** - Adds slash commands to `.claude/commands/`
+| Repo | Purpose |
+|------|---------|
+| **ScriptHammer.com** | Template to fork (messaging, auth, components) |
+| **SpokeToWork** | Prototype (28K lines) - domain knowledge reference |
+| **SpokeToWork---Business-Development** | Pitch materials, funding strategy |
+| **SpokeToWork---MVP-Build** | Legacy placeholder (to be archived) |
 
-This takes a minute or two. Subsequent runs are instant.
+## What SpokeToWork Does
 
-## Available Slash Commands
+Helps job seekers without car access find employment within cycling distance:
+- **Company Tracking**: Add employers, track application status
+- **Community Registry**: Shared employer directory (multi-tenant)
+- **Route Planning**: Bicycle directions via OpenRouteService
+- **Messaging**: Coordinate with other job seekers (from ScriptHammer)
 
-After initialization, use these commands in Claude Code:
+See [Constitution](docs/full-constitution-prp.md) for full details.
 
-### Core Workflow
+---
 
-1. `/speckit.constitution` - Establish project principles and values
-2. `/speckit.specify` - Create baseline specification for features
-3. `/speckit.plan` - Create detailed implementation plan
-4. `/speckit.tasks` - Generate actionable task list
-5. `/speckit.implement` - Execute implementation
-
-### Optional Enhancement Commands
-
-- `/speckit.clarify` - Ask structured questions to clarify requirements (run before planning)
-- `/speckit.analyze` - Cross-artifact consistency analysis (run after tasks, before implementation)
-- `/speckit.checklist` - Generate quality checklists (run after planning)
-
-## Using the Specify CLI
-
-You can also use SpecKit's CLI directly:
-
-```bash
-./specify --help           # Show help
-./specify init --help      # Show initialization options
-./specify check            # Check required tools
-```
-
-## Updating SpecKit
-
-To update to the latest version of SpecKit:
-
-```bash
-./specify update
-```
-
-This removes the current installation and reinstalls from the latest version on GitHub.
-
-## File Structure
-
-```
-your-project/
-├── .claude/              # Claude Code configuration and slash commands
-│   └── commands/         # Auto-generated slash commands
-├── .specify/             # SpecKit templates and configuration
-│   ├── memory/           # Project constitution
-│   ├── templates/        # Spec, plan, and task templates
-│   └── scripts/          # Helper scripts
-├── .speckit/             # SpecKit installation (auto-generated)
-├── docker-compose.yml    # Docker configuration
-├── specify*              # Main wrapper script
-├── .gitignore           # Excludes .speckit/ and .specify/
-└── README.md            # This file
-```
-
-### What to Commit to Git
-
-**Commit these:**
-- `docker-compose.yml`
-- `specify` script
-- `README.md`
-- `.gitignore`
-
-**Don't commit these** (already in .gitignore):
-- `.speckit/` - Installation files, regenerated automatically
-- `.specify/` - Templates and config, regenerated on init
-
-## How It Works
-
-The `specify` wrapper script:
-
-1. Checks if Docker is running
-2. Installs SpecKit in `.speckit/` if not present
-3. Initializes project structure in `.specify/` if not present
-4. Runs your command in a Docker container
-
-All SpecKit files stay in your project directory, persisting between runs.
-
-## Troubleshooting
-
-### "Cannot connect to Docker daemon"
-Make sure Docker is running.
-
-### Permission errors on files
-Run `./specify update` to clean and reinstall.
-
-### Slash commands not appearing
-Make sure you're using Claude Code and the `.claude/commands/` directory exists.
-
-## Learn More
-
-- [SpecKit Documentation](https://github.com/github/spec-kit)
-- [Spec-Driven Development Guide](https://github.com/github/spec-kit/blob/main/docs/spec-driven-development.md)
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
-# SpecKitTemplate
+*Maintainer: Jonathan E Pohlner*
+*Location: Cleveland, Tennessee*
