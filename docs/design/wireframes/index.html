@@ -57,10 +57,39 @@
       font-size: 11px;
       font-weight: 600;
       color: #9ca3af;
-      padding: 0 20px;
-      margin-bottom: 8px;
+      padding: 8px 20px;
+      margin-bottom: 0;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.15s;
+    }
+
+    .nav-section h2:hover {
+      color: #d1d5db;
+    }
+
+    .nav-section h2::before {
+      content: '▼';
+      font-size: 8px;
+      transition: transform 0.2s;
+    }
+
+    .nav-section.collapsed h2::before {
+      transform: rotate(-90deg);
+    }
+
+    .nav-section .nav-links {
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      max-height: 500px;
+    }
+
+    .nav-section.collapsed .nav-links {
+      max-height: 0;
     }
 
     .nav-section a {
@@ -224,98 +253,112 @@
 
     <div class="nav-section">
       <h2>00 - App Shell</h2>
-      <a href="#" data-svg="00-app-shell/desktop-layout.svg">
-        Desktop Layout
-        <span class="path">3-column layout</span>
-      </a>
-      <a href="#" data-svg="00-app-shell/mobile-layout.svg">
-        Mobile Layout
-        <span class="path">Bottom navigation</span>
-      </a>
+      <div class="nav-links">
+        <a href="#" data-svg="00-app-shell/desktop-layout.svg">
+          Desktop Layout
+          <span class="path">3-column layout</span>
+        </a>
+        <a href="#" data-svg="00-app-shell/mobile-layout.svg">
+          Mobile Layout
+          <span class="path">Bottom navigation</span>
+        </a>
+      </div>
     </div>
 
     <div class="nav-section">
       <h2>01 - Company Tracking</h2>
-      <a href="#" data-svg="01-company-tracking/list-view.svg">
-        List View
-        <span class="path">Table + map panel</span>
-      </a>
-      <a href="#" data-svg="01-company-tracking/add-company.svg">
-        Add Company
-        <span class="path">Modal form</span>
-      </a>
-      <a href="#" data-svg="01-company-tracking/detail-panel.svg">
-        Detail Panel
-        <span class="path">Slide panel</span>
-      </a>
+      <div class="nav-links">
+        <a href="#" data-svg="01-company-tracking/list-view.svg">
+          List View
+          <span class="path">Table + map panel</span>
+        </a>
+        <a href="#" data-svg="01-company-tracking/add-company.svg">
+          Add Company
+          <span class="path">Modal form</span>
+        </a>
+        <a href="#" data-svg="01-company-tracking/detail-panel.svg">
+          Detail Panel
+          <span class="path">Slide panel</span>
+        </a>
+      </div>
     </div>
 
     <div class="nav-section">
       <h2>02 - Home Location</h2>
-      <a href="#" data-svg="02-home-location/onboarding-prompt.svg">
-        Onboarding Prompt
-        <span class="path">First-time setup</span>
-      </a>
-      <a href="#" data-svg="02-home-location/settings-update.svg">
-        Settings Update
-        <span class="path">Address management</span>
-      </a>
+      <div class="nav-links">
+        <a href="#" data-svg="02-home-location/onboarding-prompt.svg">
+          Onboarding Prompt
+          <span class="path">First-time setup</span>
+        </a>
+        <a href="#" data-svg="02-home-location/settings-update.svg">
+          Settings Update
+          <span class="path">Address management</span>
+        </a>
+      </div>
     </div>
 
     <div class="nav-section">
       <h2>03 - Shared Registry</h2>
-      <a href="#" data-svg="03-shared-registry/browse-filter.svg">
-        Browse & Filter
-        <span class="path">Community directory</span>
-      </a>
-      <a href="#" data-svg="03-shared-registry/contribute-flow.svg">
-        Contribute Flow
-        <span class="path">Share with community</span>
-      </a>
-      <a href="#" data-svg="03-shared-registry/duplicate-warning.svg">
-        Duplicate Warning
-        <span class="path">Dedup detection</span>
-      </a>
+      <div class="nav-links">
+        <a href="#" data-svg="03-shared-registry/browse-filter.svg">
+          Browse & Filter
+          <span class="path">Community directory</span>
+        </a>
+        <a href="#" data-svg="03-shared-registry/contribute-flow.svg">
+          Contribute Flow
+          <span class="path">Share with community</span>
+        </a>
+        <a href="#" data-svg="03-shared-registry/duplicate-warning.svg">
+          Duplicate Warning
+          <span class="path">Dedup detection</span>
+        </a>
+      </div>
     </div>
 
     <div class="nav-section">
       <h2>04 - Route Planning</h2>
-      <a href="#" data-svg="04-route-planning/route-list.svg">
-        Route List
-        <span class="path">Saved routes</span>
-      </a>
-      <a href="#" data-svg="04-route-planning/create-route.svg">
-        Create Route
-        <span class="path">Route builder</span>
-      </a>
-      <a href="#" data-svg="04-route-planning/directions-view.svg">
-        Directions View
-        <span class="path">Turn-by-turn</span>
-      </a>
+      <div class="nav-links">
+        <a href="#" data-svg="04-route-planning/route-list.svg">
+          Route List
+          <span class="path">Saved routes</span>
+        </a>
+        <a href="#" data-svg="04-route-planning/create-route.svg">
+          Create Route
+          <span class="path">Route builder</span>
+        </a>
+        <a href="#" data-svg="04-route-planning/directions-view.svg">
+          Directions View
+          <span class="path">Turn-by-turn</span>
+        </a>
+      </div>
     </div>
 
     <div class="nav-section">
       <h2>05 - Employer Features</h2>
-      <a href="#" data-svg="05-employer-features/dashboard.svg">
-        Dashboard
-        <span class="path">Stats + jobs</span>
-      </a>
-      <a href="#" data-svg="05-employer-features/claim-company.svg">
-        Claim Company
-        <span class="path">Verification flow</span>
-      </a>
-      <a href="#" data-svg="05-employer-features/post-job.svg">
-        Post Job
-        <span class="path">Job form + preview</span>
-      </a>
+      <div class="nav-links">
+        <a href="#" data-svg="05-employer-features/dashboard.svg">
+          Dashboard
+          <span class="path">Stats + jobs</span>
+        </a>
+        <a href="#" data-svg="05-employer-features/claim-company.svg">
+          Claim Company
+          <span class="path">Verification flow</span>
+        </a>
+        <a href="#" data-svg="05-employer-features/post-job.svg">
+          Post Job
+          <span class="path">Job form + preview</span>
+        </a>
+      </div>
     </div>
 
     <div class="nav-section">
       <h2>06 - Components</h2>
-      <a href="#" data-svg="06-component-library.svg">
-        Component Library
-        <span class="path">All UI elements</span>
-      </a>
+      <div class="nav-links">
+        <a href="#" data-svg="06-component-library.svg">
+          Component Library
+          <span class="path">All UI elements</span>
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -381,9 +424,30 @@
     const titleEl = document.querySelector('#current-info .title');
     const counterEl = document.querySelector('#current-info .counter');
     const navLinks = document.querySelectorAll('nav a[data-svg]');
+    const navSections = document.querySelectorAll('.nav-section');
     const zoomInBtn = document.getElementById('zoom-in');
     const zoomOutBtn = document.getElementById('zoom-out');
     const zoomDisplay = document.getElementById('zoom-display');
+
+    // Section collapse/expand functionality
+    function expandSectionForPath(path) {
+      navSections.forEach(section => {
+        const hasActiveLink = section.querySelector(`a[data-svg="${path}"]`);
+        if (hasActiveLink) {
+          section.classList.remove('collapsed');
+        } else {
+          section.classList.add('collapsed');
+        }
+      });
+    }
+
+    // Click handlers for section headers
+    navSections.forEach(section => {
+      const header = section.querySelector('h2');
+      header.addEventListener('click', () => {
+        section.classList.toggle('collapsed');
+      });
+    });
 
     // Combined transform for pan + zoom
     function updateTransform() {
@@ -414,10 +478,11 @@
       prevBtn.disabled = currentIndex === 0;
       nextBtn.disabled = currentIndex === wireframes.length - 1;
 
-      // Update active nav link
+      // Update active nav link and expand its section
       navLinks.forEach(link => {
         link.classList.toggle('active', link.dataset.svg === wf.path);
       });
+      expandSectionForPath(wf.path);
     }
 
     // Nav link clicks
