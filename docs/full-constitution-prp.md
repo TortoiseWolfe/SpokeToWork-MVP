@@ -178,6 +178,11 @@ route_companies
 - [ ] All ScriptHammer tests passing
 - [ ] SpokeToWork-specific features have test coverage
 
+### Performance Success
+- [ ] Route calculation: < 5 seconds
+- [ ] Page load: < 3 seconds
+- [ ] Map tile loading: < 2 seconds
+
 ### Business Success (Beta Launch: End of January 2026)
 
 **Timeline Context**: Investors (TVFCU, CO.LAB) want 12 months of revenue + beta feedback. Revenue must start by Jan 2026 to qualify for Sept 2027 applications.
