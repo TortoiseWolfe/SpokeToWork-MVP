@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      .bg { fill: #f0f4f8; }
+      .overlay { fill: rgba(0,0,0,0.6); }
+      .fill-white { fill: #ffffff; stroke: #374151; stroke-width: 1; }
+      .annotation { fill: #6366f1; font-family: monospace; font-size: 10px; }
+      .annotation-box { fill: #6366f1; opacity: 0.1; stroke: #6366f1; stroke-width: 1; }
+      .label { fill: #374151; font-family: monospace; font-size: 11px; }
+      .heading { fill: #1f2937; font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; }
+      .text-sm { fill: #6b7280; font-family: system-ui, sans-serif; font-size: 10px; }
+      .text-md { fill: #374151; font-family: system-ui, sans-serif; font-size: 12px; }
+      .leader { stroke: #6366f1; stroke-width: 1; stroke-dasharray: 2,2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1200" height="800"/>
+
+  <!-- Title -->
+  <text x="600" y="25" text-anchor="middle" class="annotation" font-size="14" font-weight="bold">03 - SHARED REGISTRY: DUPLICATE WARNING</text>
+  <text x="600" y="40" text-anchor="middle" class="annotation">Modal shown when contributing a company that may already exist</text>
+
+  <!-- Dimmed background -->
+  <rect x="40" y="60" width="1120" height="680" class="overlay" rx="8"/>
+
+  <!-- ============================================ -->
+  <!-- DUPLICATE WARNING MODAL -->
+  <!-- ============================================ -->
+  <rect x="200" y="100" width="800" height="520" rx="12" fill="white" stroke="#374151" stroke-width="2"/>
+
+  <!-- Warning header -->
+  <rect x="200" y="100" width="800" height="60" rx="12" ry="12" fill="#fef3c7"/>
+  <circle cx="240" cy="130" r="18" fill="#f59e0b"/>
+  <text x="240" y="136" text-anchor="middle" fill="white" font-size="18" font-weight="bold">!</text>
+  <text x="280" y="138" class="heading" font-size="18" fill="#92400e">This company may already exist</text>
+  <text x="960" y="135" fill="#6b7280" font-size="20" style="cursor:pointer">×</text>
+
+  <!-- Comparison section -->
+  <text x="600" y="190" text-anchor="middle" class="label">COMPARE</text>
+
+  <!-- Your company (left) -->
+  <g transform="translate(230, 210)">
+    <rect x="0" y="0" width="330" height="220" rx="8" fill="#f9fafb" stroke="#374151"/>
+    <text x="165" y="30" text-anchor="middle" class="label" fill="#6366f1">YOUR COMPANY</text>
+
+    <text x="20" y="60" class="heading">Wacker Polysilicon</text>
+    <text x="20" y="85" class="text-md">456 Industrial Pkwy</text>
+    <text x="20" y="105" class="text-md">Cleveland, TN 37311</text>
+
+    <text x="20" y="135" class="label">INDUSTRY</text>
+    <rect x="20" y="145" width="100" height="22" rx="4" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="70" y="160" text-anchor="middle" class="text-sm">Manufacturing</text>
+
+    <text x="20" y="195" class="label">SOURCE</text>
+    <text x="20" y="215" class="text-sm" fill="#6b7280">Added by you on Dec 20</text>
+  </g>
+
+  <!-- VS indicator -->
+  <circle cx="600" cy="320" r="20" fill="#e5e7eb"/>
+  <text x="600" y="326" text-anchor="middle" class="label">VS</text>
+
+  <!-- Existing company (right) -->
+  <g transform="translate(640, 210)">
+    <rect x="0" y="0" width="330" height="220" rx="8" fill="#f9fafb" stroke="#22c55e" stroke-width="2"/>
+    <text x="165" y="30" text-anchor="middle" class="label" fill="#22c55e">IN REGISTRY</text>
+
+    <text x="20" y="60" class="heading">Wacker Chemical</text>
+    <text x="20" y="85" class="text-md">456 Industrial Parkway</text>
+    <text x="20" y="105" class="text-md">Cleveland, TN 37311</text>
+
+    <text x="20" y="135" class="label">INDUSTRY</text>
+    <rect x="20" y="145" width="100" height="22" rx="4" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="70" y="160" text-anchor="middle" class="text-sm">Manufacturing</text>
+
+    <text x="20" y="195" class="label">TRACKING</text>
+    <text x="20" y="215" class="text-sm" fill="#6b7280">15 people tracking this company</text>
+  </g>
+
+  <!-- Match confidence -->
+  <rect x="430" y="445" width="340" height="40" rx="6" fill="#fef9c3" stroke="#eab308"/>
+  <text x="600" y="470" text-anchor="middle" class="text-sm" fill="#92400e">Match confidence: 92% (same address, similar name)</text>
+
+  <!-- Decision buttons -->
+  <g transform="translate(230, 510)">
+    <rect x="0" y="0" width="330" height="80" rx="8" class="fill-white"/>
+    <text x="165" y="25" text-anchor="middle" class="heading">Same Company</text>
+    <text x="165" y="48" text-anchor="middle" class="text-sm" fill="#6b7280">Link your tracking to the existing entry</text>
+    <rect x="100" y="55" width="130" height="32" rx="6" fill="#22c55e"/>
+    <text x="165" y="76" text-anchor="middle" fill="white" class="text-sm">Use Existing</text>
+  </g>
+
+  <g transform="translate(640, 510)">
+    <rect x="0" y="0" width="330" height="80" rx="8" class="fill-white"/>
+    <text x="165" y="25" text-anchor="middle" class="heading">Different Company</text>
+    <text x="165" y="48" text-anchor="middle" class="text-sm" fill="#6b7280">Create a new entry in the registry</text>
+    <rect x="100" y="55" width="130" height="32" rx="6" fill="white" stroke="#374151"/>
+    <text x="165" y="76" text-anchor="middle" class="text-sm">Create New</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- ANNOTATIONS -->
+  <!-- ============================================ -->
+
+  <!-- Detection annotation -->
+  <rect x="40" y="640" width="280" height="100" rx="4" class="annotation-box"/>
+  <text x="180" y="665" text-anchor="middle" class="annotation" font-weight="bold">DUPLICATE DETECTION</text>
+  <text x="55" y="685" class="annotation">Checks before contribution:</text>
+  <text x="55" y="700" class="annotation">- Same/similar address (Levenshtein)</text>
+  <text x="55" y="715" class="annotation">- Similar company name (fuzzy match)</text>
+  <text x="55" y="730" class="annotation">- Same industry category</text>
+
+  <!-- Comparison annotation -->
+  <rect x="340" y="640" width="250" height="100" rx="4" class="annotation-box"/>
+  <text x="465" y="665" text-anchor="middle" class="annotation" font-weight="bold">SIDE-BY-SIDE COMPARE</text>
+  <text x="355" y="685" class="annotation">User can see:</text>
+  <text x="355" y="700" class="annotation">- Name differences highlighted</text>
+  <text x="355" y="715" class="annotation">- Address comparison</text>
+  <text x="355" y="730" class="annotation">- Existing tracker count</text>
+
+  <!-- Outcomes annotation -->
+  <rect x="610" y="640" width="280" height="100" rx="4" class="annotation-box"/>
+  <text x="750" y="665" text-anchor="middle" class="annotation" font-weight="bold">OUTCOME OPTIONS</text>
+  <text x="625" y="685" class="annotation">"Same Company":</text>
+  <text x="625" y="700" class="annotation">→ Links user to existing entry</text>
+  <text x="625" y="715" class="annotation">"Different Company":</text>
+  <text x="625" y="730" class="annotation">→ Creates new registry entry</text>
+
+  <!-- Data quality note -->
+  <rect x="910" y="640" width="230" height="100" rx="4" class="annotation-box"/>
+  <text x="1025" y="665" text-anchor="middle" class="annotation" font-weight="bold">DATA QUALITY</text>
+  <text x="925" y="685" class="annotation">Goal: minimize duplicates</text>
+  <text x="925" y="700" class="annotation">while respecting user input</text>
+  <text x="925" y="715" class="annotation">80% detection target</text>
+  <text x="925" y="730" class="annotation">(SC-002 from spec)</text>
+
+</svg>

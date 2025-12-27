@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      .bg { fill: #f0f4f8; }
+      .overlay { fill: rgba(0,0,0,0.5); }
+      .fill-white { fill: #ffffff; stroke: #374151; stroke-width: 1; }
+      .annotation { fill: #6366f1; font-family: monospace; font-size: 10px; }
+      .annotation-box { fill: #6366f1; opacity: 0.1; stroke: #6366f1; stroke-width: 1; }
+      .label { fill: #374151; font-family: monospace; font-size: 11px; }
+      .heading { fill: #1f2937; font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; }
+      .text-sm { fill: #6b7280; font-family: system-ui, sans-serif; font-size: 10px; }
+      .text-md { fill: #374151; font-family: system-ui, sans-serif; font-size: 12px; }
+      .leader { stroke: #6366f1; stroke-width: 1; stroke-dasharray: 2,2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1200" height="800"/>
+
+  <!-- Title -->
+  <text x="600" y="25" text-anchor="middle" class="annotation" font-size="14" font-weight="bold">03 - SHARED REGISTRY: CONTRIBUTE FLOW</text>
+  <text x="600" y="40" text-anchor="middle" class="annotation">Share a private company with the community registry</text>
+
+  <!-- ============================================ -->
+  <!-- STEP 1: Starting Point (Company Detail) -->
+  <!-- ============================================ -->
+  <g transform="translate(40, 70)">
+    <text x="175" y="0" text-anchor="middle" class="label">STEP 1: COMPANY DETAIL PANEL</text>
+
+    <rect x="0" y="15" width="350" height="340" rx="8" fill="white" stroke="#374151"/>
+
+    <!-- Company header -->
+    <text x="20" y="50" class="heading" font-size="16">ABC Manufacturing</text>
+    <rect x="20" y="60" width="60" height="20" rx="4" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="50" y="74" text-anchor="middle" class="text-sm" fill="#92400e">Private</text>
+
+    <text x="20" y="110" class="text-sm" fill="#6b7280">789 Industry Way</text>
+    <text x="20" y="128" class="text-sm" fill="#6b7280">Cleveland, TN 37311</text>
+
+    <rect x="20" y="145" width="100" height="22" rx="4" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="70" y="160" text-anchor="middle" class="text-sm">Manufacturing</text>
+
+    <rect x="130" y="145" width="50" height="22" rx="4" fill="#dcfce7" stroke="#22c55e"/>
+    <text x="155" y="160" text-anchor="middle" class="text-sm">2.3 mi</text>
+
+    <!-- Status -->
+    <text x="20" y="195" class="label">STATUS</text>
+    <rect x="20" y="205" width="85" height="28" rx="14" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="62" y="223" text-anchor="middle" class="text-sm">Researching</text>
+
+    <!-- Notes (private) -->
+    <text x="20" y="260" class="label">MY NOTES</text>
+    <rect x="20" y="270" width="310" height="40" rx="4" fill="#f9fafb" stroke="#e5e7eb"/>
+    <text x="30" y="295" class="text-sm" fill="#6b7280">"Met hiring manager at job fair..."</text>
+
+    <!-- Share button highlighted -->
+    <rect x="20" y="320" width="160" height="36" rx="6" fill="#22c55e"/>
+    <text x="100" y="343" text-anchor="middle" fill="white" class="text-md">Share with Community</text>
+  </g>
+
+  <!-- Arrow to step 2 -->
+  <path d="M 410,240 L 450,240" stroke="#6366f1" stroke-width="3"/>
+  <polygon points="450,235 465,240 450,245" fill="#6366f1"/>
+
+  <!-- ============================================ -->
+  <!-- STEP 2: Confirmation Modal -->
+  <!-- ============================================ -->
+  <g transform="translate(480, 70)">
+    <text x="175" y="0" text-anchor="middle" class="label">STEP 2: CONFIRMATION</text>
+
+    <rect x="0" y="15" width="350" height="340" rx="8" fill="white" stroke="#374151" stroke-width="2"/>
+
+    <text x="175" y="55" text-anchor="middle" class="heading" font-size="16">Share with Community?</text>
+
+    <!-- What will be shared -->
+    <rect x="20" y="75" width="310" height="110" rx="6" fill="#f0fdf4" stroke="#22c55e"/>
+    <text x="35" y="95" class="label" fill="#166534">WILL BE SHARED</text>
+
+    <circle cx="45" cy="115" r="6" fill="#22c55e"/>
+    <text x="60" y="120" class="text-md" fill="#166534">Company name: ABC Manufacturing</text>
+
+    <circle cx="45" cy="140" r="6" fill="#22c55e"/>
+    <text x="60" y="145" class="text-md" fill="#166534">Address: 789 Industry Way, Cleveland</text>
+
+    <circle cx="45" cy="165" r="6" fill="#22c55e"/>
+    <text x="60" y="170" class="text-md" fill="#166534">Industry: Manufacturing</text>
+
+    <!-- What stays private -->
+    <rect x="20" y="195" width="310" height="85" rx="6" fill="#fef2f2" stroke="#ef4444"/>
+    <text x="35" y="215" class="label" fill="#dc2626">STAYS PRIVATE</text>
+
+    <circle cx="45" cy="235" r="6" fill="#ef4444"/>
+    <text x="60" y="240" class="text-md" fill="#dc2626">Your notes: "Met hiring manager..."</text>
+
+    <circle cx="45" cy="260" r="6" fill="#ef4444"/>
+    <text x="60" y="265" class="text-md" fill="#dc2626">Your status, priority, and tracking</text>
+
+    <!-- Actions -->
+    <rect x="120" y="300" width="100" height="36" rx="6" fill="white" stroke="#374151"/>
+    <text x="170" y="323" text-anchor="middle" class="text-md">Cancel</text>
+
+    <rect x="230" y="300" width="100" height="36" rx="6" fill="#22c55e"/>
+    <text x="280" y="323" text-anchor="middle" fill="white" class="text-md">Share</text>
+  </g>
+
+  <!-- Arrow to step 3 -->
+  <path d="M 850,240 L 890,240" stroke="#6366f1" stroke-width="3"/>
+  <polygon points="890,235 905,240 890,245" fill="#6366f1"/>
+
+  <!-- ============================================ -->
+  <!-- STEP 3: Success State -->
+  <!-- ============================================ -->
+  <g transform="translate(920, 70)">
+    <text x="120" y="0" text-anchor="middle" class="label">STEP 3: SUCCESS</text>
+
+    <rect x="0" y="15" width="240" height="340" rx="8" fill="white" stroke="#374151"/>
+
+    <!-- Success icon -->
+    <circle cx="120" cy="80" r="30" fill="#dcfce7"/>
+    <circle cx="120" cy="80" r="20" fill="#22c55e"/>
+    <polyline points="108,80 116,88 132,72" fill="none" stroke="white" stroke-width="3"/>
+
+    <text x="120" y="130" text-anchor="middle" class="heading">Shared!</text>
+    <text x="120" y="150" text-anchor="middle" class="text-sm" fill="#6b7280">ABC Manufacturing is now</text>
+    <text x="120" y="168" text-anchor="middle" class="text-sm" fill="#6b7280">in the community registry</text>
+
+    <!-- Updated badge -->
+    <rect x="55" y="190" width="130" height="30" rx="6" fill="#dcfce7" stroke="#22c55e"/>
+    <circle cx="80" cy="205" r="8" fill="#22c55e"/>
+    <text x="130" y="210" text-anchor="middle" class="text-sm" fill="#166534">You contributed</text>
+
+    <!-- View in registry link -->
+    <text x="120" y="260" text-anchor="middle" class="text-sm" fill="#6366f1">View in Registry →</text>
+
+    <rect x="50" y="295" width="140" height="36" rx="6" fill="#6366f1"/>
+    <text x="120" y="318" text-anchor="middle" fill="white" class="text-md">Done</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- ANNOTATIONS -->
+  <!-- ============================================ -->
+
+  <!-- Starting point annotation -->
+  <rect x="40" y="440" width="350" height="100" rx="4" class="annotation-box"/>
+  <text x="215" y="460" text-anchor="middle" class="annotation" font-weight="bold">STARTING POINT</text>
+  <text x="50" y="480" class="annotation">- User has a PRIVATE company</text>
+  <text x="50" y="495" class="annotation">- "Private" badge shows it's not shared</text>
+  <text x="50" y="510" class="annotation">- "Share with Community" button appears</text>
+  <text x="50" y="525" class="annotation">- Only for private companies user added</text>
+
+  <!-- Privacy clarity annotation -->
+  <rect x="480" y="440" width="350" height="100" rx="4" class="annotation-box"/>
+  <text x="655" y="460" text-anchor="middle" class="annotation" font-weight="bold">PRIVACY CLARITY</text>
+  <text x="490" y="480" class="annotation">- GREEN section: what gets shared</text>
+  <text x="490" y="495" class="annotation">- RED section: what stays private</text>
+  <text x="490" y="510" class="annotation">- User sees exactly what's public</text>
+  <text x="490" y="525" class="annotation">- Notes/status never shared</text>
+
+  <!-- Success state annotation -->
+  <rect x="920" y="440" width="240" height="100" rx="4" class="annotation-box"/>
+  <text x="1040" y="460" text-anchor="middle" class="annotation" font-weight="bold">SUCCESS STATE</text>
+  <text x="930" y="480" class="annotation">- Confirmation message</text>
+  <text x="930" y="495" class="annotation">- "You contributed" badge</text>
+  <text x="930" y="510" class="annotation">- Link to view in registry</text>
+  <text x="930" y="525" class="annotation">- Company no longer private</text>
+
+  <!-- Flow notes -->
+  <rect x="40" y="560" width="1120" height="80" rx="4" class="annotation-box"/>
+  <text x="600" y="585" text-anchor="middle" class="annotation" font-weight="bold">CONTRIBUTION FLOW NOTES</text>
+  <text x="60" y="610" class="annotation">1. Contribution is one-way: once shared, company stays in registry even if user removes from their list</text>
+  <text x="60" y="625" class="annotation">2. User gets "contributor" credit visible on their profile (future feature)</text>
+
+  <!-- Duplicate check note -->
+  <rect x="40" y="660" width="400" height="60" rx="4" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="60" y="685" class="annotation" fill="#92400e" font-weight="bold">DUPLICATE CHECK</text>
+  <text x="60" y="705" class="annotation" fill="#92400e">Before Step 2, system checks for similar companies.</text>
+  <text x="60" y="720" class="annotation" fill="#92400e">If match found → duplicate-warning.svg flow</text>
+
+</svg>

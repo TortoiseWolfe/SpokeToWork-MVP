@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      .bg { fill: #f0f4f8; }
+      .fill-white { fill: #ffffff; stroke: #374151; stroke-width: 1; }
+      .fill-light { fill: #e5e7eb; stroke: #374151; stroke-width: 1; }
+      .fill-dark { fill: #1f2937; }
+      .annotation { fill: #6366f1; font-family: monospace; font-size: 10px; }
+      .annotation-box { fill: #6366f1; opacity: 0.1; stroke: #6366f1; stroke-width: 1; }
+      .label { fill: #374151; font-family: monospace; font-size: 11px; }
+      .heading { fill: #1f2937; font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; }
+      .text-sm { fill: #6b7280; font-family: system-ui, sans-serif; font-size: 10px; }
+      .text-md { fill: #374151; font-family: system-ui, sans-serif; font-size: 12px; }
+      .leader { stroke: #6366f1; stroke-width: 1; stroke-dasharray: 2,2; }
+      .map-bg { fill: #dbeafe; stroke: #374151; stroke-width: 1; }
+      .panel-shadow { filter: drop-shadow(-4px 0 8px rgba(0,0,0,0.1)); }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1200" height="800"/>
+
+  <!-- Title -->
+  <text x="600" y="25" text-anchor="middle" class="annotation" font-size="14" font-weight="bold">01 - COMPANY TRACKING: DETAIL PANEL</text>
+  <text x="600" y="40" text-anchor="middle" class="annotation">Slide panel showing company details with edit capabilities</text>
+
+  <!-- ============================================ -->
+  <!-- BACKGROUND APP (Dimmed) -->
+  <!-- ============================================ -->
+
+  <!-- Header -->
+  <rect x="40" y="60" width="1120" height="50" fill="#1f2937" opacity="0.7"/>
+
+  <!-- Left sidebar (routes) - dimmed -->
+  <rect x="40" y="110" width="220" height="630" fill="#e5e7eb" opacity="0.5" stroke="#374151"/>
+  <text x="150" y="400" text-anchor="middle" class="text-sm" fill="#9ca3af">[Routes Sidebar]</text>
+
+  <!-- Center list - dimmed -->
+  <rect x="260" y="110" width="480" height="630" fill="#f9fafb" opacity="0.5" stroke="#374151"/>
+  <text x="500" y="400" text-anchor="middle" class="text-sm" fill="#9ca3af">[Company List]</text>
+
+  <!-- ============================================ -->
+  <!-- SLIDE PANEL -->
+  <!-- ============================================ -->
+  <g class="panel-shadow">
+    <rect x="750" y="110" width="410" height="630" fill="white" stroke="#374151" stroke-width="2"/>
+  </g>
+
+  <!-- Panel Header -->
+  <rect x="750" y="110" width="410" height="60" fill="#f9fafb"/>
+  <text x="780" y="148" class="heading" font-size="16">Life Care Centers</text>
+  <text x="1120" y="145" fill="#6b7280" font-size="20" style="cursor:pointer">×</text>
+
+  <!-- Distance Badge -->
+  <rect x="950" y="128" width="60" height="26" rx="4" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="980" y="146" text-anchor="middle" class="text-md" fill="#166534">2.1 mi</text>
+
+  <!-- Priority dots -->
+  <circle cx="1030" cy="140" r="6" fill="#ef4444"/>
+  <circle cx="1048" cy="140" r="6" fill="#ef4444"/>
+  <circle cx="1066" cy="140" r="6" fill="#ef4444"/>
+
+  <!-- ============================================ -->
+  <!-- ADDRESS SECTION -->
+  <!-- ============================================ -->
+  <g transform="translate(770, 190)">
+    <text x="0" y="0" class="label">ADDRESS</text>
+    <text x="0" y="20" class="text-md">123 Main Street</text>
+    <text x="0" y="38" class="text-md">Cleveland, TN 37311</text>
+
+    <rect x="0" y="55" width="100" height="28" rx="4" fill="#6366f1"/>
+    <text x="50" y="74" text-anchor="middle" fill="white" class="text-sm">Directions</text>
+
+    <rect x="110" y="55" width="80" height="28" rx="4" class="fill-white"/>
+    <text x="150" y="74" text-anchor="middle" class="text-sm">Copy</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- STATUS PIPELINE -->
+  <!-- ============================================ -->
+  <g transform="translate(770, 300)">
+    <text x="0" y="0" class="label">APPLICATION STATUS</text>
+
+    <!-- Status pipeline -->
+    <g transform="translate(0, 20)">
+      <!-- Researching -->
+      <rect x="0" y="0" width="70" height="36" rx="18" fill="#f3f4f6" stroke="#9ca3af"/>
+      <circle cx="18" cy="18" r="6" fill="#9ca3af"/>
+      <text x="30" y="23" class="text-sm">Research</text>
+
+      <!-- Arrow -->
+      <path d="M 75,18 L 85,18" stroke="#9ca3af" stroke-width="2"/>
+      <polygon points="85,14 92,18 85,22" fill="#9ca3af"/>
+
+      <!-- Applied - ACTIVE -->
+      <rect x="95" y="0" width="70" height="36" rx="18" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+      <circle cx="113" cy="18" r="6" fill="#3b82f6"/>
+      <text x="125" y="23" class="text-sm" fill="#1d4ed8">Applied</text>
+
+      <!-- Arrow -->
+      <path d="M 170,18 L 180,18" stroke="#9ca3af" stroke-width="2"/>
+      <polygon points="180,14 187,18 180,22" fill="#9ca3af"/>
+
+      <!-- Interviewing -->
+      <rect x="190" y="0" width="85" height="36" rx="18" fill="#f3f4f6" stroke="#9ca3af"/>
+      <circle cx="208" cy="18" r="6" stroke="#9ca3af" fill="none" stroke-width="2"/>
+      <text x="220" y="23" class="text-sm">Interviewing</text>
+
+      <!-- Arrow -->
+      <path d="M 280,18 L 290,18" stroke="#9ca3af" stroke-width="2"/>
+      <polygon points="290,14 297,18 290,22" fill="#9ca3af"/>
+
+      <!-- Final states -->
+      <rect x="300" y="0" width="65" height="36" rx="18" fill="#f3f4f6" stroke="#9ca3af"/>
+      <text x="332" y="23" text-anchor="middle" class="text-sm">Offered</text>
+    </g>
+
+    <!-- Rejected option below -->
+    <rect x="300" y="65" width="65" height="28" rx="14" fill="#fee2e2" stroke="#ef4444" stroke-dasharray="3,3"/>
+    <text x="332" y="83" text-anchor="middle" class="text-sm" fill="#ef4444">Rejected</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- COMPANY INFO -->
+  <!-- ============================================ -->
+  <g transform="translate(770, 420)">
+    <text x="0" y="0" class="label">COMPANY INFO</text>
+
+    <text x="0" y="25" class="text-sm" fill="#6b7280">Industry</text>
+    <text x="100" y="25" class="text-md">Healthcare</text>
+
+    <text x="0" y="48" class="text-sm" fill="#6b7280">Size</text>
+    <text x="100" y="48" class="text-md">100-500 employees</text>
+
+    <text x="0" y="71" class="text-sm" fill="#6b7280">Added</text>
+    <text x="100" y="71" class="text-md">December 15, 2025</text>
+
+    <text x="0" y="94" class="text-sm" fill="#6b7280">Last updated</text>
+    <text x="100" y="94" class="text-md">December 26, 2025</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- NOTES SECTION -->
+  <!-- ============================================ -->
+  <g transform="translate(770, 530)">
+    <text x="0" y="0" class="label">NOTES</text>
+    <rect x="0" y="15" width="370" height="100" rx="6" class="fill-white"/>
+    <text x="15" y="40" class="text-md">Called HR on Dec 20 - they're hiring!</text>
+    <text x="15" y="60" class="text-md">Contact: Sarah Johnson</text>
+    <text x="15" y="80" class="text-md">Follow up after Jan 2nd.</text>
+    <line x1="15" y1="95" x2="355" y2="95" stroke="#e5e7eb"/>
+    <text x="340" y="108" text-anchor="end" class="text-sm" fill="#6366f1">Edit</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- PANEL ACTIONS -->
+  <!-- ============================================ -->
+  <g transform="translate(770, 660)">
+    <rect x="0" y="0" width="90" height="36" rx="6" fill="#6366f1"/>
+    <text x="45" y="23" text-anchor="middle" fill="white" class="text-md">Edit</text>
+
+    <rect x="100" y="0" width="110" height="36" rx="6" fill="white" stroke="#6366f1"/>
+    <text x="155" y="23" text-anchor="middle" fill="#6366f1" class="text-md">Add to Route</text>
+
+    <rect x="220" y="0" width="80" height="36" rx="6" fill="white" stroke="#6366f1"/>
+    <text x="260" y="23" text-anchor="middle" fill="#6366f1" class="text-md">Share</text>
+
+    <rect x="310" y="0" width="60" height="36" rx="6" fill="white" stroke="#ef4444"/>
+    <text x="340" y="23" text-anchor="middle" fill="#ef4444" class="text-md">Delete</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- SLIDE ANIMATION INDICATOR -->
+  <!-- ============================================ -->
+  <path d="M 730,400 L 750,400" stroke="#6366f1" stroke-width="3"/>
+  <path d="M 720,390 L 730,400 L 720,410" stroke="#6366f1" stroke-width="3" fill="none"/>
+  <text x="680" y="420" text-anchor="middle" class="annotation">Slides in</text>
+  <text x="680" y="435" text-anchor="middle" class="annotation">from right</text>
+
+  <!-- ============================================ -->
+  <!-- ANNOTATIONS -->
+  <!-- ============================================ -->
+
+  <!-- Panel overview -->
+  <rect x="40" y="120" width="180" height="80" rx="4" class="annotation-box"/>
+  <text x="130" y="145" text-anchor="middle" class="annotation" font-weight="bold">SLIDE PANEL</text>
+  <text x="50" y="165" class="annotation">- Opens on row click</text>
+  <text x="50" y="180" class="annotation">- Non-destructive overlay</text>
+  <text x="50" y="195" class="annotation">- X or ESC to close</text>
+
+  <!-- Status pipeline annotation -->
+  <rect x="40" y="280" width="180" height="95" rx="4" class="annotation-box"/>
+  <text x="130" y="305" text-anchor="middle" class="annotation" font-weight="bold">STATUS PIPELINE</text>
+  <text x="50" y="325" class="annotation">Click any stage to update</text>
+  <text x="50" y="340" class="annotation">Current = filled circle</text>
+  <text x="50" y="355" class="annotation">Past = solid fill</text>
+  <text x="50" y="370" class="annotation">Future = empty circle</text>
+
+  <!-- Notes annotation -->
+  <rect x="40" y="500" width="180" height="65" rx="4" class="annotation-box"/>
+  <text x="130" y="520" text-anchor="middle" class="annotation" font-weight="bold">NOTES</text>
+  <text x="50" y="540" class="annotation">- Private to user</text>
+  <text x="50" y="555" class="annotation">- Not shared with registry</text>
+
+  <!-- Action buttons annotation -->
+  <rect x="40" y="620" width="180" height="95" rx="4" class="annotation-box"/>
+  <text x="130" y="640" text-anchor="middle" class="annotation" font-weight="bold">ACTIONS</text>
+  <text x="50" y="660" class="annotation">Edit → Opens modal</text>
+  <text x="50" y="675" class="annotation">Add to Route → Route picker</text>
+  <text x="50" y="690" class="annotation">Share → Contribute to registry</text>
+  <text x="50" y="705" class="annotation">Delete → Confirm modal</text>
+
+  <!-- Z-index note -->
+  <rect x="40" y="750" width="350" height="25" rx="4" fill="white" stroke="#d1d5db"/>
+  <text x="50" y="767" class="text-sm">Panel z-index: 10 (above list, below modals at 20)</text>
+
+</svg>

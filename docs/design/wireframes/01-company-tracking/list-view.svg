@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      .bg { fill: #f0f4f8; }
+      .fill-white { fill: #ffffff; stroke: #374151; stroke-width: 1; }
+      .fill-light { fill: #e5e7eb; stroke: #374151; stroke-width: 1; }
+      .fill-dark { fill: #1f2937; }
+      .annotation { fill: #6366f1; font-family: monospace; font-size: 10px; }
+      .annotation-box { fill: #6366f1; opacity: 0.1; stroke: #6366f1; stroke-width: 1; }
+      .label { fill: #374151; font-family: monospace; font-size: 11px; }
+      .heading { fill: #1f2937; font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; }
+      .text-sm { fill: #6b7280; font-family: system-ui, sans-serif; font-size: 10px; }
+      .text-md { fill: #374151; font-family: system-ui, sans-serif; font-size: 12px; }
+      .leader { stroke: #6366f1; stroke-width: 1; stroke-dasharray: 2,2; }
+      .map-bg { fill: #dbeafe; stroke: #374151; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1200" height="800"/>
+
+  <!-- Title -->
+  <text x="600" y="25" text-anchor="middle" class="annotation" font-size="14" font-weight="bold">01 - COMPANY TRACKING: LIST VIEW</text>
+  <text x="600" y="40" text-anchor="middle" class="annotation">Primary view for managing tracked companies</text>
+
+  <!-- ============================================ -->
+  <!-- HEADER -->
+  <!-- ============================================ -->
+  <rect x="40" y="60" width="1120" height="50" class="fill-dark"/>
+  <circle cx="75" cy="85" r="16" fill="#6366f1"/>
+  <text x="75" y="90" text-anchor="middle" fill="white" font-size="12" font-weight="bold">S</text>
+  <text x="100" y="90" fill="white" class="heading">SpokeToWork</text>
+  <text x="350" y="90" class="text-md" fill="white">Companies</text>
+  <text x="440" y="90" class="text-md" fill="#9ca3af">Routes</text>
+  <text x="510" y="90" class="text-md" fill="#9ca3af">Registry</text>
+
+  <!-- ============================================ -->
+  <!-- FILTER BAR -->
+  <!-- ============================================ -->
+  <rect x="40" y="110" width="760" height="50" fill="#f9fafb" stroke="#374151"/>
+
+  <!-- Search -->
+  <rect x="55" y="120" width="220" height="32" rx="4" class="fill-white"/>
+  <text x="70" y="140" class="text-sm" fill="#9ca3af">Search companies...</text>
+
+  <!-- Status Filter -->
+  <rect x="290" y="120" width="120" height="32" rx="4" class="fill-white"/>
+  <text x="305" y="140" class="text-md">All Status</text>
+  <polygon points="390,133 400,133 395,143" fill="#6b7280"/>
+
+  <!-- Distance Filter -->
+  <rect x="420" y="120" width="100" height="32" rx="16" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="470" y="140" text-anchor="middle" class="text-sm" fill="#3b82f6">&lt; 5 miles</text>
+  <text x="508" y="140" fill="#3b82f6" class="text-sm">x</text>
+
+  <!-- Priority Filter -->
+  <rect x="535" y="120" width="90" height="32" rx="16" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="580" y="140" text-anchor="middle" class="text-sm" fill="#6b7280">Priority</text>
+
+  <!-- Sort -->
+  <rect x="640" y="120" width="80" height="32" rx="4" class="fill-white"/>
+  <text x="655" y="140" class="text-sm">Sort: Dist</text>
+  <polygon points="700,133 710,133 705,143" fill="#6b7280"/>
+
+  <!-- Add Button -->
+  <rect x="735" y="120" width="50" height="32" rx="4" fill="#6366f1"/>
+  <text x="760" y="140" text-anchor="middle" fill="white" class="text-md">+ Add</text>
+
+  <!-- ============================================ -->
+  <!-- TABLE HEADER -->
+  <!-- ============================================ -->
+  <rect x="40" y="160" width="760" height="36" fill="#f3f4f6" stroke="#374151"/>
+  <rect x="55" y="170" width="16" height="16" rx="2" stroke="#9ca3af" fill="none"/>
+  <text x="90" y="183" class="label">COMPANY</text>
+  <text x="380" y="183" class="label">DISTANCE</text>
+  <text x="470" y="183" class="label">STATUS</text>
+  <text x="600" y="183" class="label">PRIORITY</text>
+  <text x="700" y="183" class="label">ACTIONS</text>
+
+  <!-- ============================================ -->
+  <!-- TABLE ROWS -->
+  <!-- ============================================ -->
+
+  <!-- Row 1 - Selected -->
+  <rect x="40" y="196" width="760" height="60" fill="#ede9fe" stroke="#6366f1" stroke-width="2"/>
+  <rect x="55" y="218" width="16" height="16" rx="2" fill="#6366f1"/>
+  <polyline points="59,226 63,230 69,220" fill="none" stroke="white" stroke-width="2"/>
+  <text x="90" y="222" class="heading">Life Care Centers</text>
+  <text x="90" y="240" class="text-sm">123 Main St, Cleveland TN 37311</text>
+  <rect x="380" y="212" width="55" height="24" rx="4" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="407" y="228" text-anchor="middle" class="text-sm">2.1 mi</text>
+  <rect x="470" y="212" width="70" height="24" rx="12" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="505" y="228" text-anchor="middle" class="text-sm">Applied</text>
+  <circle cx="610" cy="226" r="5" fill="#ef4444"/>
+  <circle cx="625" cy="226" r="5" fill="#ef4444"/>
+  <circle cx="640" cy="226" r="5" fill="#ef4444"/>
+  <text x="700" y="228" class="text-sm" fill="#6366f1">Edit</text>
+  <text x="740" y="228" class="text-sm" fill="#ef4444">Del</text>
+
+  <!-- Row 2 -->
+  <rect x="40" y="256" width="760" height="60" fill="white" stroke="#e5e7eb"/>
+  <rect x="55" y="278" width="16" height="16" rx="2" stroke="#9ca3af" fill="none"/>
+  <text x="90" y="282" class="heading">Wacker Chemical</text>
+  <text x="90" y="300" class="text-sm">456 Industrial Pkwy, Cleveland TN</text>
+  <rect x="380" y="272" width="55" height="24" rx="4" fill="#fef9c3" stroke="#eab308"/>
+  <text x="407" y="288" text-anchor="middle" class="text-sm">4.5 mi</text>
+  <rect x="470" y="272" width="85" height="24" rx="12" fill="#fef9c3" stroke="#eab308"/>
+  <text x="512" y="288" text-anchor="middle" class="text-sm">Interviewing</text>
+  <circle cx="610" cy="286" r="5" fill="#eab308"/>
+  <circle cx="625" cy="286" r="5" fill="#eab308"/>
+  <text x="700" y="288" class="text-sm" fill="#6366f1">Edit</text>
+  <text x="740" y="288" class="text-sm" fill="#ef4444">Del</text>
+
+  <!-- Row 3 -->
+  <rect x="40" y="316" width="760" height="60" fill="white" stroke="#e5e7eb"/>
+  <rect x="55" y="338" width="16" height="16" rx="2" stroke="#9ca3af" fill="none"/>
+  <text x="90" y="342" class="heading">Whirlpool Corporation</text>
+  <text x="90" y="360" class="text-sm">789 Factory Rd, Cleveland TN</text>
+  <rect x="380" y="332" width="55" height="24" rx="4" fill="#fee2e2" stroke="#ef4444"/>
+  <text x="407" y="348" text-anchor="middle" class="text-sm">7.2 mi</text>
+  <rect x="470" y="332" width="85" height="24" rx="12" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="512" y="348" text-anchor="middle" class="text-sm">Researching</text>
+  <circle cx="610" cy="346" r="5" fill="#22c55e"/>
+  <text x="700" y="348" class="text-sm" fill="#6366f1">Edit</text>
+  <text x="740" y="348" class="text-sm" fill="#ef4444">Del</text>
+
+  <!-- Row 4 -->
+  <rect x="40" y="376" width="760" height="60" fill="white" stroke="#e5e7eb"/>
+  <rect x="55" y="398" width="16" height="16" rx="2" stroke="#9ca3af" fill="none"/>
+  <text x="90" y="402" class="heading">Dura-Line Corporation</text>
+  <text x="90" y="420" class="text-sm">101 Pipe Lane, Cleveland TN</text>
+  <rect x="380" y="392" width="55" height="24" rx="4" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="407" y="408" text-anchor="middle" class="text-sm">1.8 mi</text>
+  <rect x="470" y="392" width="65" height="24" rx="12" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="502" y="408" text-anchor="middle" class="text-sm">Offered</text>
+  <circle cx="610" cy="406" r="5" fill="#ef4444"/>
+  <circle cx="625" cy="406" r="5" fill="#ef4444"/>
+  <circle cx="640" cy="406" r="5" fill="#ef4444"/>
+  <text x="700" y="408" class="text-sm" fill="#6366f1">Edit</text>
+  <text x="740" y="408" class="text-sm" fill="#ef4444">Del</text>
+
+  <!-- Row 5 -->
+  <rect x="40" y="436" width="760" height="60" fill="white" stroke="#e5e7eb"/>
+  <rect x="55" y="458" width="16" height="16" rx="2" stroke="#9ca3af" fill="none"/>
+  <text x="90" y="462" class="heading">Resolute Forest Products</text>
+  <text x="90" y="480" class="text-sm">555 Paper Mill Rd, Cleveland TN</text>
+  <rect x="380" y="452" width="55" height="24" rx="4" fill="#fef9c3" stroke="#eab308"/>
+  <text x="407" y="468" text-anchor="middle" class="text-sm">5.3 mi</text>
+  <rect x="470" y="452" width="70" height="24" rx="12" fill="#fee2e2" stroke="#ef4444"/>
+  <text x="505" y="468" text-anchor="middle" class="text-sm">Rejected</text>
+  <circle cx="610" cy="466" r="5" fill="#eab308"/>
+  <text x="700" y="468" class="text-sm" fill="#6366f1">Edit</text>
+  <text x="740" y="468" class="text-sm" fill="#ef4444">Del</text>
+
+  <!-- Pagination -->
+  <rect x="40" y="506" width="760" height="40" fill="#f9fafb" stroke="#374151"/>
+  <text x="60" y="530" class="text-sm">Showing 1-5 of 12 companies</text>
+  <rect x="680" y="516" width="24" height="24" rx="4" fill="#6366f1"/>
+  <text x="692" y="532" text-anchor="middle" fill="white" class="text-sm">1</text>
+  <rect x="710" y="516" width="24" height="24" rx="4" class="fill-white"/>
+  <text x="722" y="532" text-anchor="middle" class="text-sm">2</text>
+  <rect x="740" y="516" width="24" height="24" rx="4" class="fill-white"/>
+  <text x="752" y="532" text-anchor="middle" class="text-sm">3</text>
+  <text x="780" y="532" class="text-sm">›</text>
+
+  <!-- ============================================ -->
+  <!-- MAP PANEL -->
+  <!-- ============================================ -->
+  <rect x="810" y="110" width="350" height="436" class="map-bg"/>
+
+  <!-- Map grid -->
+  <g stroke="#93c5fd" stroke-width="0.5" opacity="0.5">
+    <line x1="810" y1="180" x2="1160" y2="180"/>
+    <line x1="810" y1="260" x2="1160" y2="260"/>
+    <line x1="810" y1="340" x2="1160" y2="340"/>
+    <line x1="810" y1="420" x2="1160" y2="420"/>
+    <line x1="880" y1="110" x2="880" y2="546"/>
+    <line x1="950" y1="110" x2="950" y2="546"/>
+    <line x1="1020" y1="110" x2="1020" y2="546"/>
+    <line x1="1090" y1="110" x2="1090" y2="546"/>
+  </g>
+
+  <!-- Home marker -->
+  <circle cx="950" cy="380" r="18" fill="#22c55e"/>
+  <circle cx="950" cy="380" r="10" fill="white"/>
+  <polygon points="950,370 943,380 957,380" fill="#22c55e"/>
+  <rect x="946" y="378" width="8" height="8" fill="#22c55e"/>
+
+  <!-- Company markers -->
+  <circle cx="920" cy="220" r="16" fill="#6366f1" stroke="#4f46e5" stroke-width="2"/>
+  <text x="920" y="226" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+
+  <circle cx="1050" cy="280" r="14" fill="#6366f1"/>
+  <text x="1050" y="286" text-anchor="middle" fill="white" font-size="11" font-weight="bold">2</text>
+
+  <circle cx="1100" cy="400" r="14" fill="#6366f1"/>
+  <text x="1100" y="406" text-anchor="middle" fill="white" font-size="11" font-weight="bold">3</text>
+
+  <circle cx="870" cy="320" r="14" fill="#6366f1"/>
+  <text x="870" y="326" text-anchor="middle" fill="white" font-size="11" font-weight="bold">4</text>
+
+  <circle cx="1000" cy="480" r="14" fill="#6366f1"/>
+  <text x="1000" y="486" text-anchor="middle" fill="white" font-size="11" font-weight="bold">5</text>
+
+  <!-- Map controls -->
+  <rect x="1110" y="125" width="32" height="60" rx="4" class="fill-white"/>
+  <text x="1126" y="148" text-anchor="middle" class="text-md">+</text>
+  <line x1="1115" y1="155" x2="1137" y2="155" stroke="#e5e7eb"/>
+  <text x="1126" y="178" text-anchor="middle" class="text-md">-</text>
+
+  <!-- Map label -->
+  <rect x="820" y="500" width="150" height="30" rx="4" class="fill-white"/>
+  <text x="895" y="520" text-anchor="middle" class="text-sm">5 companies shown</text>
+
+  <!-- ============================================ -->
+  <!-- ANNOTATIONS -->
+  <!-- ============================================ -->
+
+  <!-- Filter bar annotation -->
+  <rect x="40" y="560" width="200" height="70" rx="4" class="annotation-box"/>
+  <text x="140" y="580" text-anchor="middle" class="annotation" font-weight="bold">FILTER BAR</text>
+  <text x="50" y="595" class="annotation">- Search by name/address</text>
+  <text x="50" y="610" class="annotation">- Filter by status, distance, priority</text>
+  <text x="50" y="625" class="annotation">- Active filters show as chips</text>
+
+  <!-- Table annotation -->
+  <rect x="260" y="560" width="220" height="70" rx="4" class="annotation-box"/>
+  <text x="370" y="580" text-anchor="middle" class="annotation" font-weight="bold">COMPANY TABLE</text>
+  <text x="270" y="595" class="annotation">- Checkbox for bulk selection</text>
+  <text x="270" y="610" class="annotation">- Color-coded distance badges</text>
+  <text x="270" y="625" class="annotation">- Click row → detail panel</text>
+
+  <!-- Distance legend -->
+  <rect x="500" y="560" width="180" height="70" rx="4" class="annotation-box"/>
+  <text x="590" y="580" text-anchor="middle" class="annotation" font-weight="bold">DISTANCE COLORS</text>
+  <rect x="510" y="590" width="40" height="16" rx="4" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="560" y="602" class="annotation">&lt;3 mi (green)</text>
+  <rect x="510" y="610" width="40" height="16" rx="4" fill="#fef9c3" stroke="#eab308"/>
+  <text x="560" y="622" class="annotation">3-6 mi (yellow)</text>
+
+  <!-- Map annotation -->
+  <rect x="700" y="560" width="200" height="70" rx="4" class="annotation-box"/>
+  <text x="800" y="580" text-anchor="middle" class="annotation" font-weight="bold">MAP PANEL</text>
+  <text x="710" y="595" class="annotation">- Shows filtered companies</text>
+  <text x="710" y="610" class="annotation">- Numbered markers match list</text>
+  <text x="710" y="625" class="annotation">- Home marker in green</text>
+
+  <!-- Status flow -->
+  <rect x="920" y="560" width="240" height="70" rx="4" class="annotation-box"/>
+  <text x="1040" y="580" text-anchor="middle" class="annotation" font-weight="bold">STATUS FLOW</text>
+  <text x="930" y="600" class="annotation">Researching → Applied → Interviewing</text>
+  <text x="930" y="620" class="annotation">                     ↓</text>
+  <text x="930" y="635" class="annotation">              Offered / Rejected</text>
+
+  <!-- Leader lines -->
+  <path d="M 505,213 L 520,180" class="leader"/>
+  <text x="525" y="175" class="annotation">Status badge</text>
+
+  <path d="M 640,226 L 660,200" class="leader"/>
+  <text x="665" y="195" class="annotation">3 dots = High priority</text>
+
+  <path d="M 920,236 L 900,255" class="leader"/>
+  <text x="830" y="260" class="annotation">Selected marker larger</text>
+
+</svg>

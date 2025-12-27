@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      .bg { fill: #f0f4f8; }
+      .fill-white { fill: #ffffff; stroke: #374151; stroke-width: 1; }
+      .fill-dark { fill: #1f2937; }
+      .annotation { fill: #6366f1; font-family: monospace; font-size: 10px; }
+      .annotation-box { fill: #6366f1; opacity: 0.1; stroke: #6366f1; stroke-width: 1; }
+      .label { fill: #374151; font-family: monospace; font-size: 11px; }
+      .heading { fill: #1f2937; font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; }
+      .text-sm { fill: #6b7280; font-family: system-ui, sans-serif; font-size: 10px; }
+      .text-md { fill: #374151; font-family: system-ui, sans-serif; font-size: 12px; }
+      .leader { stroke: #6366f1; stroke-width: 1; stroke-dasharray: 2,2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1200" height="800"/>
+
+  <!-- Title -->
+  <text x="600" y="25" text-anchor="middle" class="annotation" font-size="14" font-weight="bold">05 - EMPLOYER FEATURES: DASHBOARD</text>
+  <text x="600" y="40" text-anchor="middle" class="annotation">Employer home view with claimed companies, job postings, and stats</text>
+
+  <!-- ============================================ -->
+  <!-- HEADER -->
+  <!-- ============================================ -->
+  <rect x="40" y="60" width="1120" height="50" class="fill-dark"/>
+  <circle cx="75" cy="85" r="16" fill="#6366f1"/>
+  <text x="75" y="90" text-anchor="middle" fill="white" font-size="12" font-weight="bold">S</text>
+  <text x="100" y="90" fill="white" class="heading">SpokeToWork</text>
+  <text x="350" y="90" class="text-md" fill="#9ca3af">Companies</text>
+  <text x="440" y="90" class="text-md" fill="#9ca3af">Routes</text>
+  <text x="510" y="90" class="text-md" fill="#9ca3af">Registry</text>
+  <rect x="580" y="70" width="100" height="30" rx="4" fill="#374151"/>
+  <text x="630" y="90" text-anchor="middle" class="text-md" fill="white">Employer</text>
+
+  <!-- Employer badge -->
+  <rect x="1000" y="70" width="90" height="30" rx="4" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="1045" y="90" text-anchor="middle" class="text-sm" fill="#92400e">Employer</text>
+
+  <!-- ============================================ -->
+  <!-- COMPANY HEADER -->
+  <!-- ============================================ -->
+  <rect x="40" y="110" width="1120" height="100" fill="white" stroke="#374151"/>
+
+  <!-- Company logo placeholder -->
+  <rect x="60" y="130" width="60" height="60" rx="8" fill="#f3f4f6" stroke="#e5e7eb"/>
+  <text x="90" y="165" text-anchor="middle" class="heading" font-size="20" fill="#9ca3af">LC</text>
+
+  <!-- Company info -->
+  <text x="140" y="155" class="heading" font-size="20">Life Care Centers</text>
+  <text x="140" y="178" class="text-md" fill="#6b7280">123 Main Street, Cleveland, TN 37311 - Healthcare</text>
+  <rect x="140" y="185" width="80" height="20" rx="4" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="180" y="199" text-anchor="middle" class="text-sm" fill="#166534">Verified ✓</text>
+
+  <!-- Quick actions -->
+  <rect x="900" y="130" width="110" height="36" rx="6" fill="#6366f1"/>
+  <text x="955" y="153" text-anchor="middle" fill="white" class="text-md">+ Post Job</text>
+
+  <rect x="1020" y="130" width="120" height="36" rx="6" fill="white" stroke="#6366f1"/>
+  <text x="1080" y="153" text-anchor="middle" fill="#6366f1" class="text-md">Edit Company</text>
+
+  <!-- ============================================ -->
+  <!-- STATS ROW -->
+  <!-- ============================================ -->
+  <g transform="translate(40, 230)">
+    <!-- Active Jobs -->
+    <rect x="0" y="0" width="260" height="100" rx="8" fill="white" stroke="#374151"/>
+    <text x="20" y="35" class="label">ACTIVE JOBS</text>
+    <text x="20" y="70" class="heading" font-size="32" fill="#6366f1">3</text>
+    <text x="20" y="90" class="text-sm" fill="#6b7280">2 open, 1 filled this week</text>
+
+    <!-- Views -->
+    <rect x="280" y="0" width="260" height="100" rx="8" fill="white" stroke="#374151"/>
+    <text x="300" y="35" class="label">JOB VIEWS (30 DAYS)</text>
+    <text x="300" y="70" class="heading" font-size="32" fill="#22c55e">156</text>
+    <text x="300" y="90" class="text-sm" fill="#22c55e">↑ 23% from last month</text>
+
+    <!-- Trackers -->
+    <rect x="560" y="0" width="260" height="100" rx="8" fill="white" stroke="#374151"/>
+    <text x="580" y="35" class="label">PEOPLE TRACKING YOU</text>
+    <text x="580" y="70" class="heading" font-size="32" fill="#3b82f6">12</text>
+    <text x="580" y="90" class="text-sm" fill="#6b7280">Anonymous - no names shown</text>
+
+    <!-- Feedback -->
+    <rect x="840" y="0" width="280" height="100" rx="8" fill="white" stroke="#374151"/>
+    <text x="860" y="35" class="label">PLATFORM FEEDBACK</text>
+    <rect x="860" y="50" width="120" height="36" rx="6" fill="#6366f1"/>
+    <text x="920" y="73" text-anchor="middle" fill="white" class="text-md">Give Feedback</text>
+    <text x="860" y="95" class="text-sm" fill="#6b7280">Help us improve for beta</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- JOB POSTINGS TABLE -->
+  <!-- ============================================ -->
+  <g transform="translate(40, 350)">
+    <rect x="0" y="0" width="750" height="380" rx="8" fill="white" stroke="#374151"/>
+
+    <text x="20" y="35" class="heading" font-size="16">Job Postings</text>
+    <text x="670" y="35" text-anchor="end" class="text-sm" fill="#6366f1">View All →</text>
+
+    <!-- Table header -->
+    <rect x="0" y="50" width="750" height="35" fill="#f3f4f6"/>
+    <text x="20" y="73" class="label">JOB TITLE</text>
+    <text x="300" y="73" class="label">POSTED</text>
+    <text x="400" y="73" class="label">STATUS</text>
+    <text x="500" y="73" class="label">VIEWS</text>
+    <text x="580" y="73" class="label">INTERESTED</text>
+    <text x="680" y="73" class="label">ACTIONS</text>
+
+    <!-- Row 1 -->
+    <rect x="0" y="85" width="750" height="55" fill="white" stroke="#e5e7eb"/>
+    <text x="20" y="110" class="heading">CNA - Night Shift</text>
+    <text x="20" y="128" class="text-sm" fill="#6b7280">11pm - 7am - $15/hr</text>
+    <text x="300" y="118" class="text-md">Dec 20</text>
+    <rect x="400" y="103" width="60" height="24" rx="12" fill="#dcfce7" stroke="#22c55e"/>
+    <text x="430" y="119" text-anchor="middle" class="text-sm">Open</text>
+    <text x="520" y="118" text-anchor="middle" class="text-md">42</text>
+    <text x="610" y="118" text-anchor="middle" class="text-md" fill="#22c55e">8</text>
+    <text x="690" y="118" class="text-sm" fill="#6366f1">Edit</text>
+
+    <!-- Row 2 -->
+    <rect x="0" y="140" width="750" height="55" fill="white" stroke="#e5e7eb"/>
+    <text x="20" y="165" class="heading">RN - Day Shift</text>
+    <text x="20" y="183" class="text-sm" fill="#6b7280">7am - 3pm - $28/hr</text>
+    <text x="300" y="173" class="text-md">Dec 18</text>
+    <rect x="400" y="158" width="60" height="24" rx="12" fill="#dcfce7" stroke="#22c55e"/>
+    <text x="430" y="174" text-anchor="middle" class="text-sm">Open</text>
+    <text x="520" y="173" text-anchor="middle" class="text-md">78</text>
+    <text x="610" y="173" text-anchor="middle" class="text-md" fill="#22c55e">15</text>
+    <text x="690" y="173" class="text-sm" fill="#6366f1">Edit</text>
+
+    <!-- Row 3 -->
+    <rect x="0" y="195" width="750" height="55" fill="white" stroke="#e5e7eb"/>
+    <text x="20" y="220" class="heading">Dietary Aide</text>
+    <text x="20" y="238" class="text-sm" fill="#6b7280">Part-time - $12/hr</text>
+    <text x="300" y="228" class="text-md">Dec 15</text>
+    <rect x="400" y="213" width="60" height="24" rx="12" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="430" y="229" text-anchor="middle" class="text-sm">Filled</text>
+    <text x="520" y="228" text-anchor="middle" class="text-md">36</text>
+    <text x="610" y="228" text-anchor="middle" class="text-md">5</text>
+    <text x="690" y="228" class="text-sm" fill="#6b7280">View</text>
+
+    <!-- Empty state hint -->
+    <rect x="20" y="270" width="710" height="90" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-dasharray="4,4"/>
+    <text x="375" y="310" text-anchor="middle" class="text-md" fill="#6b7280">Ready to hire more? Post a new job to reach local job seekers.</text>
+    <rect x="300" y="325" width="150" height="28" rx="4" fill="#6366f1"/>
+    <text x="375" y="343" text-anchor="middle" fill="white" class="text-sm">+ Post New Job</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- QUICK TIPS SIDEBAR -->
+  <!-- ============================================ -->
+  <g transform="translate(810, 350)">
+    <rect x="0" y="0" width="350" height="380" rx="8" fill="white" stroke="#374151"/>
+
+    <text x="20" y="35" class="heading" font-size="16">Quick Tips</text>
+
+    <!-- Tip 1 -->
+    <rect x="20" y="55" width="310" height="70" rx="6" fill="#f0fdf4" stroke="#22c55e"/>
+    <circle cx="45" cy="90" r="14" fill="#22c55e"/>
+    <text x="45" y="96" text-anchor="middle" fill="white" font-size="14" font-weight="bold">✓</text>
+    <text x="70" y="80" class="text-md" font-weight="bold" fill="#166534">Complete your profile</text>
+    <text x="70" y="100" class="text-sm" fill="#166534">Add company logo and description</text>
+    <text x="70" y="115" class="text-sm" fill="#166534">to attract more candidates.</text>
+
+    <!-- Tip 2 -->
+    <rect x="20" y="135" width="310" height="70" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+    <circle cx="45" cy="170" r="14" fill="#f59e0b"/>
+    <text x="45" y="176" text-anchor="middle" fill="white" font-size="14" font-weight="bold">!</text>
+    <text x="70" y="160" class="text-md" font-weight="bold" fill="#92400e">Respond to candidates</text>
+    <text x="70" y="180" class="text-sm" fill="#92400e">Quick responses improve your</text>
+    <text x="70" y="195" class="text-sm" fill="#92400e">visibility in search results.</text>
+
+    <!-- Beta feedback CTA -->
+    <rect x="20" y="225" width="310" height="130" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="175" y="260" text-anchor="middle" class="heading" fill="#1d4ed8">We want your feedback!</text>
+    <text x="175" y="285" text-anchor="middle" class="text-sm" fill="#1d4ed8">Help us build the best platform</text>
+    <text x="175" y="302" text-anchor="middle" class="text-sm" fill="#1d4ed8">for Cleveland employers.</text>
+    <rect x="85" y="315" width="160" height="32" rx="6" fill="#3b82f6"/>
+    <text x="165" y="336" text-anchor="middle" fill="white" class="text-md">Share Feedback</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- ANNOTATIONS -->
+  <!-- ============================================ -->
+
+  <!-- Stats annotation -->
+  <rect x="40" y="750" width="250" height="40" rx="4" class="annotation-box"/>
+  <text x="165" y="775" text-anchor="middle" class="annotation">Tracker count is anonymous (FR-009)</text>
+
+  <!-- Feedback annotation -->
+  <rect x="950" y="750" width="200" height="40" rx="4" class="annotation-box"/>
+  <text x="1050" y="775" text-anchor="middle" class="annotation">Beta feedback is P1 priority</text>
+
+</svg>
