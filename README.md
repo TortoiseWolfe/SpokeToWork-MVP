@@ -2,6 +2,10 @@
 
 Planning repository for SpokeToWork - a bicycle-based job hunting app for Cleveland, Tennessee.
 
+## [View Wireframes](https://tortoisewolfe.github.io/SpokeToWork-MVP/design/wireframes/)
+
+Interactive UI designs for all SpokeToWork features - 17 screens covering company tracking, route planning, employer features, and more.
+
 ## What This Repo Is
 
 This is a **planning repository**, not the actual codebase. It contains:
@@ -13,7 +17,6 @@ The actual SpokeToWork app will be built by forking the [ScriptHammer.com](https
 
 ## Quick Links
 
-- [Wireframes](https://tortoisewolfe.github.io/SpokeToWork-MVP/design/wireframes/) - Interactive UI designs
 - [Constitution](docs/full-constitution-prp.md) - Product vision, scope, success criteria
 - [Business Development](https://github.com/TortoiseWolfe/SpokeToWork---Business-Development) - Pitch materials, funding strategy
 
