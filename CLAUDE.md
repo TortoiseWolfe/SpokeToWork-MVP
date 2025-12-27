@@ -1,29 +1,14 @@
-# SpokeToWork-MVP Development Guidelines
+# SpokeToWork-MVP - Specifications Repository
 
-Auto-generated from all feature plans. Last updated: 2025-12-27
+This repo contains **feature specifications**, not implementation code.
 
-## Active Technologies
+## What's Here
 
-- TypeScript 5.x (strict mode) (001-company-tracking)
+- `docs/full-constitution-prp.md` - Product vision, scope, success criteria
+- `docs/research/` - Cleveland employers, e-bike dealers
+- `docs/design/` - UX review, component library, wireframes
+- `specs/` - Feature specifications
 
-## Project Structure
+## Implementation
 
-```text
-src/
-tests/
-```
-
-## Commands
-
-npm test && npm run lint
-
-## Code Style
-
-TypeScript 5.x (strict mode): Follow standard conventions
-
-## Recent Changes
-
-- 001-company-tracking: Added TypeScript 5.x (strict mode)
-
-<!-- MANUAL ADDITIONS START -->
-<!-- MANUAL ADDITIONS END -->
+Code will be a fork of **ScriptHammer.com** (separate repo).
