@@ -10,7 +10,7 @@
       .heading { fill: #1f2937; font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; }
       .text-sm { fill: #6b7280; font-family: system-ui, sans-serif; font-size: 10px; }
       .text-md { fill: #374151; font-family: system-ui, sans-serif; font-size: 12px; }
-      .leader { stroke: #6366f1; stroke-width: 1; stroke-dasharray: 2,2; }
+      .leader { stroke: #1e40af; stroke-width: 2; stroke-dasharray: 4,2; }
       .map-bg { fill: #dbeafe; stroke: #374151; stroke-width: 1; }
     </style>
   </defs>
@@ -102,12 +102,12 @@
   <!-- ============================================ -->
 
   <!-- Progress indicator annotation -->
-  <rect x="920" y="100" width="180" height="65" rx="4" class="annotation-box"/>
-  <text x="1010" y="120" text-anchor="middle" class="annotation" font-weight="bold">ONBOARDING STEPS</text>
-  <text x="930" y="140" class="annotation">1. Set home location</text>
-  <text x="930" y="155" class="annotation">2. Add first company</text>
-  <text x="930" y="170" class="annotation">3. View on map</text>
-  <path d="M 920,140 L 620,120" class="leader"/>
+  <rect x="920" y="100" width="180" height="80" rx="4" class="annotation-box"/>
+  <text x="1010" y="125" text-anchor="middle" class="annotation" font-weight="bold">ONBOARDING STEPS</text>
+  <text x="930" y="145" class="annotation">1. Set home location</text>
+  <text x="930" y="160" class="annotation">2. Add first company</text>
+  <text x="930" y="175" class="annotation">3. View on map</text>
+  <path d="M 920,150 L 620,120" class="leader"/>
 
   <!-- Address autocomplete annotation -->
   <rect x="920" y="380" width="180" height="80" rx="4" class="annotation-box"/>

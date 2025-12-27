@@ -10,7 +10,7 @@
       .heading { fill: #1f2937; font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; }
       .text-sm { fill: #6b7280; font-family: system-ui, sans-serif; font-size: 10px; }
       .text-md { fill: #374151; font-family: system-ui, sans-serif; font-size: 12px; }
-      .leader { stroke: #6366f1; stroke-width: 1; stroke-dasharray: 2,2; }
+      .leader { stroke: #1e40af; stroke-width: 2; stroke-dasharray: 4,2; }
     </style>
   </defs>
 

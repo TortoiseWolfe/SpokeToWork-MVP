@@ -14,7 +14,7 @@
       .text-md { fill: #374151; font-family: system-ui, sans-serif; font-size: 12px; }
       .dimension { stroke: #6366f1; stroke-width: 1; fill: none; }
       .dimension-text { fill: #6366f1; font-family: monospace; font-size: 9px; }
-      .leader { stroke: #6366f1; stroke-width: 1; stroke-dasharray: 2,2; }
+      .leader { stroke: #1e40af; stroke-width: 2; stroke-dasharray: 4,2; }
       .primary { fill: #6366f1; }
       .map-bg { fill: #dbeafe; stroke: #374151; stroke-width: 1; }
     </style>

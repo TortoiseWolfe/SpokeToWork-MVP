@@ -39,27 +39,29 @@ A job seeker wants to see all their tracked employers on a map to understand geo
 
 ---
 
-### User Story 3 - Track Application Status (Priority: P2)
+### User Story 3 - Track Applications per Company (Priority: P2)
 
-A job seeker wants to track where they are in the application process with each employer.
+A job seeker wants to track multiple job applications at the same company, each with its own status. For example, they might be rejected for a senior role but encouraged to apply for a junior position.
 
-**Why this priority**: Status tracking helps users stay organized across multiple applications, but the app is still useful without it.
+**Why this priority**: Status tracking helps users stay organized across multiple applications, and tracking per-role (not just per-company) reflects real job hunting scenarios.
 
-**Independent Test**: Can be tested by changing a company's status and verifying it updates in both list and map views.
+**Independent Test**: Can be tested by adding multiple applications to one company, each with different statuses, and verifying they display correctly.
 
 **Acceptance Scenarios**:
 
-1. **Given** a user viewing a company, **When** they update the application status, **Then** the new status is saved and displayed.
-2. **Given** a user with multiple companies, **When** they filter by status, **Then** only companies matching that status are shown.
-3. **Given** a user updating status to "offer" or "closed", **When** viewing their list, **Then** these companies are visually distinguished from active applications.
+1. **Given** a user viewing a company, **When** they add a new application with a role title, **Then** the application is saved with its own status tracking.
+2. **Given** a user with multiple applications at one company, **When** they update one application's status, **Then** only that application's status changes (others remain unchanged).
+3. **Given** a user who was rejected for one role, **When** they add a new application for a different role at the same company, **Then** both applications are tracked separately with their own statuses.
+4. **Given** a user with multiple companies, **When** they filter by status, **Then** companies with at least one application matching that status are shown.
 
-**Status Values**:
-- Not Applied (default)
+**Application Status Values**:
+- Researching (tracking company, not yet applied)
 - Applied
 - Screening
 - Interviewing
 - Offer
-- Closed
+- Rejected
+- Withdrawn (user pulled out)
 
 ---
 
@@ -131,6 +133,9 @@ A job seeker is on location (poor connectivity) and needs to view their company 
 - What happens when a user tries to add a duplicate company? Warn user, allow them to proceed or view existing entry.
 - How does the system handle very long notes? Limit note length with clear character count indicator.
 - What happens if offline changes conflict with server data? Last-write-wins with notification to user.
+- What happens when a user adds the same role title twice at one company? Allow it - they may reapply after being rejected.
+- How are companies with zero applications displayed? Show "No applications" or "Researching" indicator in list view.
+- What happens when all applications at a company are rejected/withdrawn? Company remains in list; user can add new applications or delete company.
 
 ## Requirements *(mandatory)*
 
@@ -142,20 +147,24 @@ A job seeker is on location (poor connectivity) and needs to view their company 
 - **FR-004**: System MUST calculate and display distance from user's home to each company
 - **FR-005**: System MUST allow users to edit all company fields (name, address, contact info, notes)
 - **FR-006**: System MUST allow users to delete companies with confirmation
-- **FR-007**: System MUST track application status per company with defined status values
-- **FR-008**: System MUST allow filtering companies by status
-- **FR-009**: System MUST allow sorting companies by distance, priority, status, or name
-- **FR-010**: System MUST allow users to set priority level (1-5) for each company
-- **FR-011**: System MUST store company data for offline access
-- **FR-012**: System MUST queue offline changes and sync when connection is restored
-- **FR-013**: System MUST notify users of sync success or conflicts
-- **FR-014**: System MUST allow optional fields: contact name, email, phone, notes
+- **FR-007**: System MUST allow multiple applications per company, each with its own status
+- **FR-008**: System MUST track application status per application (not per company) with defined status values
+- **FR-009**: System MUST allow adding applications with role title (required) and notes (optional)
+- **FR-010**: System MUST allow filtering companies by application status (shows companies with at least one matching application)
+- **FR-011**: System MUST allow sorting companies by distance, priority, or name
+- **FR-012**: System MUST allow users to set priority level (1-5) for each company (company-level, not per application)
+- **FR-013**: System MUST store company and application data for offline access
+- **FR-014**: System MUST queue offline changes and sync when connection is restored
+- **FR-015**: System MUST notify users of sync success or conflicts
+- **FR-016**: System MUST allow optional company fields: contact name, email, phone, company notes
+- **FR-017**: System MUST allow optional application fields: application notes
 
 ### Key Entities
 
-- **Company**: Represents an employer the user is tracking. Key attributes: name, address, coordinates (lat/lng), contact info (name, email, phone), notes, application status, priority level, created date, updated date.
+- **Company**: Represents an employer the user is tracking. Key attributes: name, address, coordinates (lat/lng), industry, size, contact info (name, email, phone), company notes, priority level (1-5), created date, updated date. A company can have zero or more applications.
+- **Application**: Represents a specific job application at a company. Key attributes: role title (required), status, date applied, application notes (optional). Each application tracks a separate position the user has applied for or is researching.
 - **User Home Location**: The user's starting point for distance calculations. Key attributes: address, coordinates.
-- **Application Status**: The stage of the job application process. Values: not_applied, applied, screening, interviewing, offer, closed.
+- **Application Status**: The stage of the job application process. Values: researching, applied, screening, interviewing, offer, rejected, withdrawn.
 
 ## Success Criteria *(mandatory)*
 
