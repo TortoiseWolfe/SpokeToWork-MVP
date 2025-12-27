@@ -555,11 +555,41 @@
       zoomOutBtn.disabled = zoom <= ZOOM_MIN;
     });
 
-    // Mouse wheel zoom (direct scroll = zoom, no Ctrl needed)
+    // Mouse wheel zoom centered on cursor position
     viewerContainer.addEventListener('wheel', (e) => {
       e.preventDefault();
+
+      // Get container dimensions and mouse position relative to container center
+      const rect = viewerContainer.getBoundingClientRect();
+      const containerCenterX = rect.width / 2;
+      const containerCenterY = rect.height / 2;
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      // Mouse offset from container center
+      const offsetX = mouseX - containerCenterX;
+      const offsetY = mouseY - containerCenterY;
+
+      // Calculate new zoom level
       const delta = e.deltaY > 0 ? -ZOOM_STEP : ZOOM_STEP;
-      setZoom(zoom + delta);
+      const oldZoom = zoom;
+      const newZoom = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, zoom + delta));
+
+      if (newZoom !== oldZoom) {
+        // Adjust pan to keep the point under cursor stationary
+        // The point under cursor in image space: (offsetX - panX) / oldZoom
+        // After zoom, we want: (offsetX - newPanX) / newZoom = (offsetX - panX) / oldZoom
+        // Solving: newPanX = offsetX - (offsetX - panX) * newZoom / oldZoom
+        const scale = newZoom / oldZoom;
+        panX = offsetX - (offsetX - panX) * scale;
+        panY = offsetY - (offsetY - panY) * scale;
+
+        zoom = newZoom;
+        updateTransform();
+        zoomDisplay.textContent = `${Math.round(zoom * 100)}%`;
+        zoomInBtn.disabled = zoom >= ZOOM_MAX;
+        zoomOutBtn.disabled = zoom <= ZOOM_MIN;
+      }
     }, { passive: false });
 
     // Pan/drag functionality using transform
