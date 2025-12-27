@@ -217,40 +217,39 @@
   <!-- ============================================ -->
 
   <!-- Filter bar annotation -->
-  <rect x="40" y="560" width="240" height="70" rx="4" class="annotation-box"/>
-  <text x="160" y="580" text-anchor="middle" class="annotation" font-weight="bold">FILTER BAR</text>
+  <rect x="40" y="560" width="320" height="70" rx="4" class="annotation-box"/>
+  <text x="200" y="580" text-anchor="middle" class="annotation" font-weight="bold">FILTER BAR</text>
   <text x="50" y="595" class="annotation">- Search by name/address</text>
-  <text x="50" y="610" class="annotation">- Filter: status, distance, priority</text>
+  <text x="50" y="610" class="annotation">- Filter by status, distance, priority</text>
   <text x="50" y="625" class="annotation">- Active filters show as chips</text>
 
   <!-- Table annotation -->
-  <rect x="260" y="560" width="220" height="70" rx="4" class="annotation-box"/>
-  <text x="370" y="580" text-anchor="middle" class="annotation" font-weight="bold">COMPANY TABLE</text>
-  <text x="270" y="595" class="annotation">- Checkbox for bulk selection</text>
-  <text x="270" y="610" class="annotation">- Color-coded distance badges</text>
-  <text x="270" y="625" class="annotation">- Click row → detail panel</text>
+  <rect x="380" y="560" width="230" height="70" rx="4" class="annotation-box"/>
+  <text x="495" y="580" text-anchor="middle" class="annotation" font-weight="bold">COMPANY TABLE</text>
+  <text x="390" y="595" class="annotation">- Checkbox for bulk selection</text>
+  <text x="390" y="610" class="annotation">- Color-coded distance badges</text>
+  <text x="390" y="625" class="annotation">- Click row → detail panel</text>
 
   <!-- Distance legend -->
-  <rect x="500" y="560" width="180" height="70" rx="4" class="annotation-box"/>
-  <text x="590" y="580" text-anchor="middle" class="annotation" font-weight="bold">DISTANCE COLORS</text>
-  <rect x="510" y="590" width="40" height="16" rx="4" fill="#dcfce7" stroke="#22c55e"/>
-  <text x="560" y="602" class="annotation">&lt;3 mi (green)</text>
-  <rect x="510" y="610" width="40" height="16" rx="4" fill="#fef9c3" stroke="#eab308"/>
-  <text x="560" y="622" class="annotation">3-6 mi (yellow)</text>
+  <rect x="630" y="560" width="160" height="70" rx="4" class="annotation-box"/>
+  <text x="710" y="580" text-anchor="middle" class="annotation" font-weight="bold">DISTANCE COLORS</text>
+  <rect x="640" y="590" width="40" height="16" rx="4" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="690" y="602" class="annotation">&lt;3 mi</text>
+  <rect x="640" y="610" width="40" height="16" rx="4" fill="#fef9c3" stroke="#eab308"/>
+  <text x="690" y="622" class="annotation">3-6 mi</text>
 
   <!-- Map annotation -->
-  <rect x="700" y="560" width="200" height="70" rx="4" class="annotation-box"/>
-  <text x="800" y="580" text-anchor="middle" class="annotation" font-weight="bold">MAP PANEL</text>
-  <text x="710" y="595" class="annotation">- Shows filtered companies</text>
-  <text x="710" y="610" class="annotation">- Numbered markers match list</text>
-  <text x="710" y="625" class="annotation">- Home marker in green</text>
+  <rect x="810" y="560" width="190" height="70" rx="4" class="annotation-box"/>
+  <text x="905" y="580" text-anchor="middle" class="annotation" font-weight="bold">MAP PANEL</text>
+  <text x="820" y="595" class="annotation">- Shows filtered companies</text>
+  <text x="820" y="610" class="annotation">- Markers match list order</text>
+  <text x="820" y="625" class="annotation">- Home marker in green</text>
 
   <!-- Applications column -->
-  <rect x="920" y="560" width="240" height="85" rx="4" class="annotation-box"/>
-  <text x="1040" y="585" text-anchor="middle" class="annotation" font-weight="bold">APPLICATIONS COLUMN</text>
-  <text x="930" y="605" class="annotation">Shows count + active status</text>
-  <text x="930" y="620" class="annotation">"2 apps (1 active)" = multiple</text>
-  <text x="930" y="635" class="annotation">"No applications" = researching</text>
+  <rect x="40" y="650" width="280" height="70" rx="4" class="annotation-box"/>
+  <text x="180" y="670" text-anchor="middle" class="annotation" font-weight="bold">APPLICATIONS COLUMN</text>
+  <text x="50" y="690" class="annotation">Shows count + active status per company</text>
+  <text x="50" y="705" class="annotation">"2 apps (1 active)" or "No applications"</text>
 
   <!-- Leader lines -->
   <path d="M 505,213 L 520,180" class="leader"/>
