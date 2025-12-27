@@ -101,20 +101,20 @@
 
     #viewer-container {
       flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      overflow: auto;
+      position: relative;
+      overflow: hidden;
       background: #374151;
     }
 
     #viewer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       transform-origin: center center;
-      transition: transform 0.15s ease;
+      /* Transform set via JS: translate(-50%, -50%) translate(panX, panY) scale(zoom) */
     }
 
     /* Bottom navigation */
@@ -321,9 +321,7 @@
 
   <main>
     <div id="viewer-container">
-      <object id="viewer" type="image/svg+xml" data="00-app-shell/desktop-layout.svg">
-        <p class="error">Unable to load SVG</p>
-      </object>
+      <img id="viewer" src="00-app-shell/desktop-layout.svg" alt="Wireframe preview" draggable="false">
     </div>
 
     <footer>
@@ -370,11 +368,14 @@
 
     let currentIndex = 0;
     let zoom = 1;
+    let panX = 0;
+    let panY = 0;
     const ZOOM_STEP = 0.25;
     const ZOOM_MIN = 0.25;
     const ZOOM_MAX = 3;
 
     const viewer = document.getElementById('viewer');
+    const viewerContainer = document.getElementById('viewer-container');
     const prevBtn = document.getElementById('prev');
     const nextBtn = document.getElementById('next');
     const titleEl = document.querySelector('#current-info .title');
@@ -384,15 +385,26 @@
     const zoomOutBtn = document.getElementById('zoom-out');
     const zoomDisplay = document.getElementById('zoom-display');
 
+    // Combined transform for pan + zoom
+    function updateTransform() {
+      viewer.style.transform = `translate(-50%, -50%) translate(${panX}px, ${panY}px) scale(${zoom})`;
+    }
+
     function updateView(index) {
       currentIndex = index;
       const wf = wireframes[currentIndex];
 
-      // Reset zoom when changing wireframes
-      setZoom(1);
+      // Reset zoom and pan when changing wireframes
+      zoom = 1;
+      panX = 0;
+      panY = 0;
+      updateTransform();
+      zoomDisplay.textContent = '100%';
+      zoomInBtn.disabled = false;
+      zoomOutBtn.disabled = zoom <= ZOOM_MIN;
 
       // Update viewer
-      viewer.data = wf.path;
+      viewer.src = wf.path;
 
       // Update info
       titleEl.textContent = wf.title;
@@ -444,14 +456,21 @@
       } else if (e.key === '-' || e.key === '_') {
         setZoom(zoom - ZOOM_STEP);
       } else if (e.key === '0') {
-        setZoom(1);
+        // Reset zoom and pan
+        zoom = 1;
+        panX = 0;
+        panY = 0;
+        updateTransform();
+        zoomDisplay.textContent = '100%';
+        zoomInBtn.disabled = false;
+        zoomOutBtn.disabled = zoom <= ZOOM_MIN;
       }
     });
 
     // Zoom functions
     function setZoom(level) {
       zoom = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, level));
-      viewer.style.transform = `scale(${zoom})`;
+      updateTransform();
       zoomDisplay.textContent = `${Math.round(zoom * 100)}%`;
       zoomInBtn.disabled = zoom >= ZOOM_MAX;
       zoomOutBtn.disabled = zoom <= ZOOM_MIN;
@@ -460,21 +479,27 @@
     // Zoom button clicks
     zoomInBtn.addEventListener('click', () => setZoom(zoom + ZOOM_STEP));
     zoomOutBtn.addEventListener('click', () => setZoom(zoom - ZOOM_STEP));
-    zoomDisplay.addEventListener('click', () => setZoom(1));
+    zoomDisplay.addEventListener('click', () => {
+      // Reset zoom and pan
+      zoom = 1;
+      panX = 0;
+      panY = 0;
+      updateTransform();
+      zoomDisplay.textContent = '100%';
+      zoomInBtn.disabled = false;
+      zoomOutBtn.disabled = zoom <= ZOOM_MIN;
+    });
 
-    // Mouse wheel zoom (Ctrl + scroll)
-    const viewerContainer = document.getElementById('viewer-container');
+    // Mouse wheel zoom (direct scroll = zoom, no Ctrl needed)
     viewerContainer.addEventListener('wheel', (e) => {
-      if (e.ctrlKey) {
-        e.preventDefault();
-        const delta = e.deltaY > 0 ? -ZOOM_STEP : ZOOM_STEP;
-        setZoom(zoom + delta);
-      }
+      e.preventDefault();
+      const delta = e.deltaY > 0 ? -ZOOM_STEP : ZOOM_STEP;
+      setZoom(zoom + delta);
     }, { passive: false });
 
-    // Pan/drag functionality
+    // Pan/drag functionality using transform
     let isDragging = false;
-    let startX, startY, scrollLeft, scrollTop;
+    let lastX, lastY;
 
     viewerContainer.addEventListener('mousedown', (e) => {
       // Only left mouse button
@@ -482,23 +507,21 @@
 
       isDragging = true;
       viewerContainer.classList.add('dragging');
-      startX = e.pageX - viewerContainer.offsetLeft;
-      startY = e.pageY - viewerContainer.offsetTop;
-      scrollLeft = viewerContainer.scrollLeft;
-      scrollTop = viewerContainer.scrollTop;
+      lastX = e.clientX;
+      lastY = e.clientY;
     });
 
     viewerContainer.addEventListener('mousemove', (e) => {
       if (!isDragging) return;
       e.preventDefault();
 
-      const x = e.pageX - viewerContainer.offsetLeft;
-      const y = e.pageY - viewerContainer.offsetTop;
-      const walkX = (x - startX) * 1.5; // Multiplier for faster panning
-      const walkY = (y - startY) * 1.5;
+      // Update pan offset based on mouse movement
+      panX += e.clientX - lastX;
+      panY += e.clientY - lastY;
+      lastX = e.clientX;
+      lastY = e.clientY;
 
-      viewerContainer.scrollLeft = scrollLeft - walkX;
-      viewerContainer.scrollTop = scrollTop - walkY;
+      updateTransform();
     });
 
     viewerContainer.addEventListener('mouseup', () => {
