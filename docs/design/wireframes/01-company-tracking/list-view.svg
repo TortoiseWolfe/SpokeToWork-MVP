@@ -217,10 +217,10 @@
   <!-- ============================================ -->
 
   <!-- Filter bar annotation -->
-  <rect x="40" y="560" width="200" height="70" rx="4" class="annotation-box"/>
-  <text x="140" y="580" text-anchor="middle" class="annotation" font-weight="bold">FILTER BAR</text>
+  <rect x="40" y="560" width="240" height="70" rx="4" class="annotation-box"/>
+  <text x="160" y="580" text-anchor="middle" class="annotation" font-weight="bold">FILTER BAR</text>
   <text x="50" y="595" class="annotation">- Search by name/address</text>
-  <text x="50" y="610" class="annotation">- Filter by status, distance, priority</text>
+  <text x="50" y="610" class="annotation">- Filter: status, distance, priority</text>
   <text x="50" y="625" class="annotation">- Active filters show as chips</text>
 
   <!-- Table annotation -->

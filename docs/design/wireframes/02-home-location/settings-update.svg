@@ -162,8 +162,8 @@
   <!-- ============================================ -->
 
   <!-- Settings nav annotation -->
-  <rect x="40" y="720" width="200" height="50" rx="4" class="annotation-box"/>
-  <text x="140" y="740" text-anchor="middle" class="annotation" font-weight="bold">SETTINGS NAV</text>
+  <rect x="40" y="720" width="240" height="50" rx="4" class="annotation-box"/>
+  <text x="160" y="740" text-anchor="middle" class="annotation" font-weight="bold">SETTINGS NAV</text>
   <text x="50" y="760" class="annotation">Consistent across all settings pages</text>
 
   <!-- Current address annotation -->
